@@ -1,2 +1,11 @@
-# Healthcare-Management-System
-A serverless Healthcare Management System built with AWS Lambda and React, integrating various healthcare APIs for seamless patient care and hospital management.
+# Healthcare Management System
+
+A comprehensive serverless application designed to streamline patient care and hospital management using AWS Lambda and React.
+
+## Features
+
+- **Nearby Hospital Locator**
+- **User Authentication**
+- **Health Data Storage**
+- **Access to Health Records**
+- **Appointment Scheduling**
