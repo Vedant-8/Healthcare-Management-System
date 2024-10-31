@@ -2,7 +2,7 @@
 
 A comprehensive serverless application designed to streamline patient care and hospital management using AWS Lambda and React.
 
-## Features
+## Features to be included
 
 - **Nearby Hospital Locator**
 - **User Authentication**
