@@ -6,6 +6,6 @@ A comprehensive serverless application designed to streamline patient care and h
 
 - **Nearby Hospital Locator**
 - **User Authentication**
-- **Health Data Storage**
+- **Health Data Storage** 
 - **Access to Health Records**
 - **Appointment Scheduling**
