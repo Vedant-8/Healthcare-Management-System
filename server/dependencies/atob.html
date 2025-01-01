@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css" />
+    <title>Dynamic Route Selection</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #map {
+            height: 90vh;
+            width: 100vw;
+        }
+
+        #dropdown-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="dropdown-container">
+        <label for="destination">Choose a destination:</label>
+        <select id="destination">
+            <option value="73.0811,19.0405">Satish S Joshi Clinic</option>
+            <option value="73.0786,19.0419">BARC Kharghar Dispensary</option>
+            <option value="73.0786,19.0419">Department of Dental</option>
+            <option value="73.0785,19.0418">Department of X-Ray</option>
+            <option value="73.0779,19.0367">Bharatiya Vidyapeet Medical College</option>
+        </select>
+    </div> -->
+
+    <div id="map"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoid2ViLWNvZGVncmFtbWVyIiwiYSI6ImNraHB2dXJvajFldTAzMm14Y2lveTB3a3cifQ.LfZtv0p9GUZCP7ZVuT33ow';
+
+        let userLocation = [73.0786, 19.0419]; // Default location in case geolocation fails
+
+        // Get user's current location
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                userLocation = [position.coords.longitude, position.coords.latitude];
+                initializeMap(userLocation);
+            },
+            () => {
+                initializeMap(userLocation); // Fallback to default location
+            },
+            { enableHighAccuracy: true }
+        );
+
+        function initializeMap(center) {
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v11',
+                center: center,
+                zoom: 15,
+            });
+
+            const nav = new mapboxgl.NavigationControl();
+            map.addControl(nav);
+
+            const directions = new MapboxDirections({
+                accessToken: mapboxgl.accessToken,
+                unit: 'metric',
+            });
+
+            map.addControl(directions, 'top-left');
+
+            // Set origin as user's location
+            directions.setOrigin(center);
+
+            // Dropdown functionality for destination
+            const dropdown = document.getElementById('destination');
+            dropdown.addEventListener('change', () => {
+                const selectedValue = dropdown.value.split(',').map(Number);
+                directions.setDestination(selectedValue); // Set the new destination
+            });
+        }
+    </script>
+</body>
+
+</html>
