@@ -1,0 +1,30 @@
+{
+    "Total Activity": {
+        "Move Minutes": 1095.0,
+        "Calories Burned": 53072.47,
+        "Distance Covered (km)": 59.67,
+        "Heart Points": 296.0,
+        "Heart Minutes": 282.0
+    },
+    "Activity Breakdown": {
+        "Biking Duration (min)": 9.08,
+        "Walking Duration (min)": 576.95,
+        "Running Duration (min)": 4.63,
+        "Calisthenics Duration (min)": 0.0,
+        "Paced Walking Duration (min)": 0.0
+    },
+    "Speed Analysis": {
+        "Average Speed (m/s)": 0.43,
+        "Max Speed (m/s)": 2.42,
+        "Min Speed (m/s)": 0.24
+    },
+    "Step Count": 86633,
+    "Weight": {
+        "Average Weight (kg)": "Not Available",
+        "Max Weight (kg)": "Not Available",
+        "Min Weight (kg)": "Not Available"
+    },
+    "Inactivity": {
+        "Inactive Duration (min)": 0.0
+    }
+}
