@@ -1,34 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Reset for Better Styling Consistency */
+html,
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafe;
+  color: #333333;
 }
 
-nav {
-  background: #333;
-  color: #fff;
-  padding: 10px;
+/* Smooth scrolling for modern aesthetics */
+html {
+  scroll-behavior: smooth;
 }
 
-nav h1 {
-  margin: 0;
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #b3c4ff, #f3d9fa);
+  border-radius: 4px;
 }
 
-nav ul li {
-  display: inline;
-  margin-right: 20px;
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #91a8f4, #e5b6f8);
 }
 
-.sidebar {
-  width: 200px;
-  float: left;
-  padding: 10px;
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+/* Animations for subtle transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
