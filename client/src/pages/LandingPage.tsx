@@ -26,71 +26,76 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Section 2: Key Features */}
-      <section className="py-16 bg-gray-50">
-        <Typography
-          variant="h4"
-          className="text-center font-bold text-3xl text-gray-800 mb-8"
-        >
-          Key Features
-        </Typography>
-        <Grid container spacing={4} className="px-8 max-w-7xl mx-auto">
-          <Grid item xs={12} sm={6} md={4}>
-            <Card
-              elevation={4}
-              className="hover:scale-105 transition-transform duration-300"
-            >
-              <CardContent>
-                <Typography
-                  variant="h5"
-                  className="font-semibold text-gray-800"
+      <section className="py-16 bg-blue-50 flex justify-center items-center min-h-screen">
+        <div className="text-center max-w-6xl w-full">
+          <Typography
+            variant="h4"
+            className="font-bold text-3xl text-gray-800 mb-12"
+          >
+            Key Features
+          </Typography>
+          <br />
+          <Grid container spacing={6} justifyContent="center" className="px-4">
+            {[
+              {
+                title: "Personalized Health Logs",
+                description:
+                  "Record and track your health data for a comprehensive overview of your well-being.",
+              },
+              {
+                title: "Appointment Management",
+                description:
+                  "Schedule and track appointments with ease, ensuring you're always on time.",
+              },
+              {
+                title: "Expert Health Recommendations",
+                description:
+                  "Receive personalized recommendations to improve your health.",
+              },
+              {
+                title: "Secure Medical Records",
+                description:
+                  "Keep all your medical data safe and easily accessible whenever you need it.",
+              },
+              {
+                title: "Health Insights & Trends",
+                description:
+                  "Analyze your health progress with detailed insights and trend tracking.",
+              },
+              {
+                title: "24/7 Support",
+                description:
+                  "Access support anytime to assist you with your health management.",
+              },
+            ].map((feature, index) => (
+              <Grid key={index} item xs={12} sm={6} md={4}>
+                <Card
+                  elevation={6}
+                  className="h-60 hover:scale-105 transition-transform duration-300 animate-fadeIn rounded-lg flex flex-col justify-center items-center p-6"
+                  style={{
+                    borderRadius: "12px", // Keep rounded corners for the cards
+                    color: "white",
+                  }}
                 >
-                  Personalized Health Logs
-                </Typography>
-                <Typography variant="body2" className="mt-2 text-gray-600">
-                  Record and track your health data for a comprehensive overview
-                  of your well-being.
-                </Typography>
-              </CardContent>
-            </Card>
+                  <CardContent className="h-full flex flex-col justify-center items-center">
+                    <Typography
+                      variant="h5"
+                      className="font-bold text-gray-800 text-lg text-center"
+                    >
+                      {feature.title}
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      className="mt-2 text-gray-600 text-sm text-center"
+                    >
+                      {feature.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card
-              elevation={4}
-              className="hover:scale-105 transition-transform duration-300"
-            >
-              <CardContent>
-                <Typography
-                  variant="h5"
-                  className="font-semibold text-gray-800"
-                >
-                  Appointment Management
-                </Typography>
-                <Typography variant="body2" className="mt-2 text-gray-600">
-                  Schedule and track appointments with ease, ensuring you're
-                  always on time.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <Card
-              elevation={4}
-              className="hover:scale-105 transition-transform duration-300"
-            >
-              <CardContent>
-                <Typography
-                  variant="h5"
-                  className="font-semibold text-gray-800"
-                >
-                  Expert Health Recommendations
-                </Typography>
-                <Typography variant="body2" className="mt-2 text-gray-600">
-                  Receive personalized recommendations to improve your health.
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+        </div>
       </section>
 
       {/* Section 3: Call to Action */}
