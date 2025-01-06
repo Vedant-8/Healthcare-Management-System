@@ -1,0 +1,125 @@
+[
+    {
+        "meta": {
+            "messageId": "94d013c2-28dc-40fe-b7cc-c60f4f0c5c77",
+            "when": "2025-01-06T19:35:59.331Z",
+            "type": "medical.consolidated-data"
+        },
+        "patients": [
+            {
+                "bundle": {
+                    "type": "searchset",
+                    "entry": [
+                        {
+                            "resource": {
+                                "content": [
+                                    {
+                                        "attachment": {
+                                            "url": "https://metriport-seed-data-sandbox.s3.us-west-2.amazonaws.com/andreas_MR.html.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWX27OVJFB27EUOWU%2F20250106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250106T193559Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGMaCXVzLXdlc3QtMiJIMEYCIQCWq%2FDTVUtBrLat4cIqKuWB5x6fP7xZck14W5ibCebrTAIhAOmu3AsT7jZw%2BmQEdQSeK9FqhpW4Owh9lg4LqTJ7eTIqKtEECEwQARoMNDYzNTE5Nzg3NTk0Igy6beX3fgLXd%2FVGoMwqrgRctjoegVNZm4rPpJhFVgd3Slf%2BwiK55m%2FnjVNCdEtZFoUNtZasZByCtekPSUlP9wLBkllR2r1ezZrHUSBn%2FOnuE%2Fpgg1cYvEhrdXpbZWQIx%2B1OX2GJFCHfaZHwE1Eu%2BUjhbA2qMFrnCbX4DuO0w6Vjdrb2Uq%2Fj3KKCrvAFd0IoW5gBUAp9PhyRlF9VsxJIlKH7DZKFEaokr5LV%2BTtg74OExp0x9eAUYmGyhFpEG2MbcvD6IqwfmpN1p3jPrHvBrZ37NuISX0%2FUitE0RPTsCRgzsbbnNHgQ411bJCx4hGpYS7JqYQ2V9HvgwK8hLqQHm9tD%2B2Xt7PsIBj2YVsHAgY91aK%2FAOUQ2OIvO2Q%2F8HmQU0QrbMYvrES2ls%2B7Z0Xh9qJSD%2FgJ7EDTuWXtZkjk82q9vGKvNMeO3fkuj2eI3OYh4FzHjJNSaIX0BchEULcP%2FH%2Fk7fwMUmWhnbm8tnnWW%2FP5aKhSAox%2BVGuCsa7QuAMrJ9mZGjMFjKLg0j1SHiV0R0yOiR3o9gF0GbNFn1%2FnZC%2BwMjJd13jh3fTOilQb%2FeqtVn5lPU2LRgPp9DEcdDA9h%2F8IAkiUUk0QbyciMgTnX9VeOanYvDrakRTDgs%2FtBIIw1Lt640lUV9mNnKSffUz18Bs8R3Ym8oRy5e5lcn8JpxiWvHGF3v89Fd8MN%2FSZHL1aNjNPeN%2FVdBe00aR%2FZRPcPkr0HMKVdD4oeMgePkBRt8FncI035J5SaXHANVKmiTRUwncbwuwY6pgHz0t1J41CFzusi6ZIRxFjwuRXgRGxkOzqJMR5cOgvoSAjBnHw6jJK4fHBhZsCoRaPKmMwJfF%2FHmH6y%2Fz957WdsJU1fm7HPWyQgUErcmA3txQnn2tI6lWCRRqXWWqrK6okr9G5tF8TtlMM2BZwWTTum7dY2Yo0uhXRZH7we8qaDJPnQXXNcA%2B8DYAVr%2B3BrJ6C2hRr5UdYXRg8OGKUZ43rK8xXQT%2FeS&X-Amz-Signature=d782eea2fdbdf08c90b5ef2940e1495d0a5191d5c69c63b294d1907cf59a55b8&X-Amz-SignedHeaders=host",
+                                            "contentType": "application/pdf"
+                                        }
+                                    }
+                                ],
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "resourceType": "DocumentReference"
+                            }
+                        }
+                    ],
+                    "total": 1,
+                    "resourceType": "Bundle"
+                },
+                "status": "completed",
+                "filters": {
+                    "dateTo": "2025-01-01",
+                    "dateFrom": "2023-05-26",
+                    "resources": "MedicationRequest"
+                },
+                "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
+            }
+        ]
+    },
+    {
+        "meta": {
+            "messageId": "b04f187c-56ab-478c-b9e6-86c350438418",
+            "when": "2025-01-06T19:37:06.752Z",
+            "type": "medical.consolidated-data"
+        },
+        "patients": [
+            {
+                "bundle": {
+                    "type": "searchset",
+                    "entry": [
+                        {
+                            "resource": {
+                                "content": [
+                                    {
+                                        "attachment": {
+                                            "url": "https://metriport-seed-data-sandbox.s3.us-west-2.amazonaws.com/andreas_MR.html.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWX27OVJFB27EUOWU%2F20250106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250106T193706Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGMaCXVzLXdlc3QtMiJIMEYCIQCWq%2FDTVUtBrLat4cIqKuWB5x6fP7xZck14W5ibCebrTAIhAOmu3AsT7jZw%2BmQEdQSeK9FqhpW4Owh9lg4LqTJ7eTIqKtEECEwQARoMNDYzNTE5Nzg3NTk0Igy6beX3fgLXd%2FVGoMwqrgRctjoegVNZm4rPpJhFVgd3Slf%2BwiK55m%2FnjVNCdEtZFoUNtZasZByCtekPSUlP9wLBkllR2r1ezZrHUSBn%2FOnuE%2Fpgg1cYvEhrdXpbZWQIx%2B1OX2GJFCHfaZHwE1Eu%2BUjhbA2qMFrnCbX4DuO0w6Vjdrb2Uq%2Fj3KKCrvAFd0IoW5gBUAp9PhyRlF9VsxJIlKH7DZKFEaokr5LV%2BTtg74OExp0x9eAUYmGyhFpEG2MbcvD6IqwfmpN1p3jPrHvBrZ37NuISX0%2FUitE0RPTsCRgzsbbnNHgQ411bJCx4hGpYS7JqYQ2V9HvgwK8hLqQHm9tD%2B2Xt7PsIBj2YVsHAgY91aK%2FAOUQ2OIvO2Q%2F8HmQU0QrbMYvrES2ls%2B7Z0Xh9qJSD%2FgJ7EDTuWXtZkjk82q9vGKvNMeO3fkuj2eI3OYh4FzHjJNSaIX0BchEULcP%2FH%2Fk7fwMUmWhnbm8tnnWW%2FP5aKhSAox%2BVGuCsa7QuAMrJ9mZGjMFjKLg0j1SHiV0R0yOiR3o9gF0GbNFn1%2FnZC%2BwMjJd13jh3fTOilQb%2FeqtVn5lPU2LRgPp9DEcdDA9h%2F8IAkiUUk0QbyciMgTnX9VeOanYvDrakRTDgs%2FtBIIw1Lt640lUV9mNnKSffUz18Bs8R3Ym8oRy5e5lcn8JpxiWvHGF3v89Fd8MN%2FSZHL1aNjNPeN%2FVdBe00aR%2FZRPcPkr0HMKVdD4oeMgePkBRt8FncI035J5SaXHANVKmiTRUwncbwuwY6pgHz0t1J41CFzusi6ZIRxFjwuRXgRGxkOzqJMR5cOgvoSAjBnHw6jJK4fHBhZsCoRaPKmMwJfF%2FHmH6y%2Fz957WdsJU1fm7HPWyQgUErcmA3txQnn2tI6lWCRRqXWWqrK6okr9G5tF8TtlMM2BZwWTTum7dY2Yo0uhXRZH7we8qaDJPnQXXNcA%2B8DYAVr%2B3BrJ6C2hRr5UdYXRg8OGKUZ43rK8xXQT%2FeS&X-Amz-Signature=3e307ea19f659b54a01ddd3d27d72648f016df994498f91dca61c6aa304b5e96&X-Amz-SignedHeaders=host",
+                                            "contentType": "application/pdf"
+                                        }
+                                    }
+                                ],
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "resourceType": "DocumentReference"
+                            }
+                        }
+                    ],
+                    "total": 1,
+                    "resourceType": "Bundle"
+                },
+                "status": "completed",
+                "filters": {
+                    "dateTo": "",
+                    "dateFrom": "",
+                    "resources": "MedicationRequest"
+                },
+                "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
+            }
+        ]
+    },
+    {
+        "meta": {
+            "messageId": "0cdcdcb0-602c-4692-a30b-b65d43b1663a",
+            "when": "2025-01-06T19:39:19.942Z",
+            "type": "medical.consolidated-data"
+        },
+        "patients": [
+            {
+                "bundle": {
+                    "type": "searchset",
+                    "entry": [
+                        {
+                            "resource": {
+                                "content": [
+                                    {
+                                        "attachment": {
+                                            "url": "https://metriport-seed-data-sandbox.s3.us-west-2.amazonaws.com/andreas_MR.html.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWX27OVJFB27EUOWU%2F20250106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250106T193919Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGMaCXVzLXdlc3QtMiJIMEYCIQCWq%2FDTVUtBrLat4cIqKuWB5x6fP7xZck14W5ibCebrTAIhAOmu3AsT7jZw%2BmQEdQSeK9FqhpW4Owh9lg4LqTJ7eTIqKtEECEwQARoMNDYzNTE5Nzg3NTk0Igy6beX3fgLXd%2FVGoMwqrgRctjoegVNZm4rPpJhFVgd3Slf%2BwiK55m%2FnjVNCdEtZFoUNtZasZByCtekPSUlP9wLBkllR2r1ezZrHUSBn%2FOnuE%2Fpgg1cYvEhrdXpbZWQIx%2B1OX2GJFCHfaZHwE1Eu%2BUjhbA2qMFrnCbX4DuO0w6Vjdrb2Uq%2Fj3KKCrvAFd0IoW5gBUAp9PhyRlF9VsxJIlKH7DZKFEaokr5LV%2BTtg74OExp0x9eAUYmGyhFpEG2MbcvD6IqwfmpN1p3jPrHvBrZ37NuISX0%2FUitE0RPTsCRgzsbbnNHgQ411bJCx4hGpYS7JqYQ2V9HvgwK8hLqQHm9tD%2B2Xt7PsIBj2YVsHAgY91aK%2FAOUQ2OIvO2Q%2F8HmQU0QrbMYvrES2ls%2B7Z0Xh9qJSD%2FgJ7EDTuWXtZkjk82q9vGKvNMeO3fkuj2eI3OYh4FzHjJNSaIX0BchEULcP%2FH%2Fk7fwMUmWhnbm8tnnWW%2FP5aKhSAox%2BVGuCsa7QuAMrJ9mZGjMFjKLg0j1SHiV0R0yOiR3o9gF0GbNFn1%2FnZC%2BwMjJd13jh3fTOilQb%2FeqtVn5lPU2LRgPp9DEcdDA9h%2F8IAkiUUk0QbyciMgTnX9VeOanYvDrakRTDgs%2FtBIIw1Lt640lUV9mNnKSffUz18Bs8R3Ym8oRy5e5lcn8JpxiWvHGF3v89Fd8MN%2FSZHL1aNjNPeN%2FVdBe00aR%2FZRPcPkr0HMKVdD4oeMgePkBRt8FncI035J5SaXHANVKmiTRUwncbwuwY6pgHz0t1J41CFzusi6ZIRxFjwuRXgRGxkOzqJMR5cOgvoSAjBnHw6jJK4fHBhZsCoRaPKmMwJfF%2FHmH6y%2Fz957WdsJU1fm7HPWyQgUErcmA3txQnn2tI6lWCRRqXWWqrK6okr9G5tF8TtlMM2BZwWTTum7dY2Yo0uhXRZH7we8qaDJPnQXXNcA%2B8DYAVr%2B3BrJ6C2hRr5UdYXRg8OGKUZ43rK8xXQT%2FeS&X-Amz-Signature=16e440537f2ee316432c7362bc5040fd2555468b6f86c2c7edbddf126112b6f3&X-Amz-SignedHeaders=host",
+                                            "contentType": "application/pdf"
+                                        }
+                                    }
+                                ],
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "resourceType": "DocumentReference"
+                            }
+                        }
+                    ],
+                    "total": 1,
+                    "resourceType": "Bundle"
+                },
+                "status": "completed",
+                "filters": {
+                    "dateTo": "",
+                    "dateFrom": "",
+                    "resources": "AllergyIntolerance"
+                },
+                "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
+            }
+        ]
+    }
+]

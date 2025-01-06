@@ -33,7 +33,7 @@ app.include_router(map_router, prefix="/api")
 app.include_router(patient_router, prefix="/api")
 app.include_router(document_router, prefix="/api")
 app.include_router(webhook_router, prefix="/api")
-
+app.include_router(FHIR_router, prefix="/api")
 
 @app.get("/")
 def root():
