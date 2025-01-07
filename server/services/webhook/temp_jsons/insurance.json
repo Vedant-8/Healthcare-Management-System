@@ -1,0 +1,16 @@
+[
+    {
+        "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428",
+        "coverageId": "65772b28-ff79-4fd0-beb9-190f5d9ff016",
+        "status": "active",
+        "payor": "Organization/5f0bd1e2-e068-4901-8b17-88737a57a94a",
+        "identifier": "112233445566",
+        "relationship": "HMO",
+        "lastUpdated": "2024-09-10T17:00:37.953+00:00"
+    },
+    {
+        "organizationId": "5f0bd1e2-e068-4901-8b17-88737a57a94a",
+        "name": "SIGMA MEDICARE, INC",
+        "address": "123 Headquarters Road, El Paso, TX 79911"
+    }
+]

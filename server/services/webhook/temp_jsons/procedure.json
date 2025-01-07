@@ -73,5 +73,35 @@
         "Reason": [],
         "Outcome": "N/A",
         "Note": []
+    },
+    {
+        "Procedure": "HC MAGNESIUM - MAGNESIUM",
+        "Status": "completed",
+        "Performed": "2024-07-07T15:01:00.000Z",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Internal Medicine"
+            }
+        ],
+        "Location": "N/A",
+        "Reason": [],
+        "Outcome": "N/A",
+        "Note": []
+    },
+    {
+        "Procedure": "HC 12 LEAD EKG; TRACING ONLY - ECG 12-LEAD",
+        "Status": "completed",
+        "Performed": "2024-07-06T21:35:48.000Z",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Internal Medicine"
+            }
+        ],
+        "Location": "N/A",
+        "Reason": [],
+        "Outcome": "N/A",
+        "Note": []
     }
 ]

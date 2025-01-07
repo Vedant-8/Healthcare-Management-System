@@ -1,0 +1,35 @@
+[
+    {
+        "Medication": "hydroCHLOROthiazide (HYDRODIURIL) tablet 12.5 mg",
+        "id": "a785d9ed-edde-42e6-a00c-8c22319fda1e",
+        "Code": "429503",
+        "lastUpdated": "2024-07-19T00:02:57.968Z",
+        "dosage": "Take 1 tablet by mouth daily",
+        "route": "Oral",
+        "value": 12.5,
+        "unit": "mg",
+        "status": "active"
+    },
+    {
+        "Medication": "oxyCODONE-acetaminophen (PERCOCET) 5-325 mg tablet",
+        "id": "bbbb0984-0e36-4281-9f69-71e59d7919d1",
+        "Code": "1049221",
+        "lastUpdated": "2024-07-19T00:02:52.686Z",
+        "dosage": "1 tablet, Oral, Once, On Wed 4/24/24 at 1615, 1 dose, Post-op, Onset: 10-15 min; Duration: 4-6 hr; May give for higher pain score upon patient request. Possible Indication: Pain Side Effects: Drowsiness, Dizziness, Constipation, Nausea",
+        "route": "Oral",
+        "value": 1,
+        "unit": "{tbl}",
+        "status": "completed"
+    },
+    {
+        "Medication": "naproxen (NAPROSYN) 500 MG tablet",
+        "id": "84e4e752-9efe-47cd-98a9-287760fff571",
+        "Code": "198014",
+        "lastUpdated": "2024-07-19T00:02:52.686Z",
+        "dosage": "Starting on Sun 8/1/21 at 0938, 1 dose, Created by cabinet override Possible Indication: Pain Side Effects: Drowsiness, Dizziness, Constipation, Nausea",
+        "route": "N/A",
+        "value": "",
+        "unit": "",
+        "status": "completed"
+    }
+]
