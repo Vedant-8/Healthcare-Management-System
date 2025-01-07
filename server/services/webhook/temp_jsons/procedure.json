@@ -1,0 +1,77 @@
+[
+    {
+        "Procedure": "HC-XR CHEST 1 VIEW; XR CHEST PORTABLE 1 VIEW",
+        "Status": "completed",
+        "Performed": "2023-09-26T04:02:11+00:00",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Attending physician"
+            }
+        ],
+        "Location": "N/A",
+        "Reason": [],
+        "Outcome": "N/A",
+        "Note": []
+    },
+    {
+        "Procedure": "BASIC METABOLIC PANEL",
+        "Status": "completed",
+        "Performed": "2023-09-24T17:28:00+00:00",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Attending physician"
+            }
+        ],
+        "Location": "N/A",
+        "Reason": [],
+        "Outcome": "N/A",
+        "Note": []
+    },
+    {
+        "Procedure": "FUNGAL CULTURE, NON-BLOOD",
+        "Status": "completed",
+        "Performed": "2023-09-28T16:40:00+00:00",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Attending physician"
+            }
+        ],
+        "Location": "N/A",
+        "Reason": [],
+        "Outcome": "N/A",
+        "Note": []
+    },
+    {
+        "Procedure": "STERILE BODY FLUID CULTURE, AEROBIC",
+        "Status": "completed",
+        "Performed": "2023-09-23T04:45:00+00:00",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Attending physician"
+            }
+        ],
+        "Location": "N/A",
+        "Reason": [],
+        "Outcome": "N/A",
+        "Note": []
+    },
+    {
+        "Procedure": "ESTIMATED GLOMERULAR FILTRATION RATE",
+        "Status": "completed",
+        "Performed": "2023-09-23T02:30:00+00:00",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Attending physician"
+            }
+        ],
+        "Location": "N/A",
+        "Reason": [],
+        "Outcome": "N/A",
+        "Note": []
+    }
+]

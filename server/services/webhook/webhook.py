@@ -75,26 +75,4 @@ async def webhook(request: Request):
 
 
 
-import json
 
-# Assuming `data` is the JSON object
-def extract_allergy_info(data):
-    allergy_data = []
-
-    for item in data:
-        for patient in item.get("patients", []):
-            entries = patient.get("bundle", {}).get("entry", [])
-            for entry in entries:
-                resource = entry.get("resource", {})
-                if resource.get("resourceType") == "AllergyIntolerance":
-                    allergy_data.append(resource)
-                elif patient.get("filters", {}).get("resources") == "MedicationRequest":
-                    allergy_data.append(resource)  # Assuming MedicationRequest may have allergy info
-                # Additional logic if DocumentReference or PDFs need processing
-    return allergy_data
-
-# Example usage
-data = JSON_FILE_PATH = Path("server/services/webhook/webhook_db.json")
-
-allergy_info = extract_allergy_info(data)
-print(json.dumps(allergy_info, indent=2))
