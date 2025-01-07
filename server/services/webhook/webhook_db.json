@@ -1,8 +1,8 @@
 [
     {
         "meta": {
-            "messageId": "d3cccf4b-fd63-4f5a-a70b-67f796b0dc6d",
-            "when": "2025-01-07T19:12:57.398Z",
+            "messageId": "6649e542-6483-4e1f-b137-70b91a40bc0a",
+            "when": "2025-01-07T21:17:31.575Z",
             "type": "medical.consolidated-data",
             "data": {}
         },
@@ -44,47 +44,6 @@
                             }
                         },
                         {
-                            "fullUrl": "urn:uuid:65772b28-ff79-4fd0-beb9-190f5d9ff016",
-                            "resource": {
-                                "id": "65772b28-ff79-4fd0-beb9-190f5d9ff016",
-                                "meta": {
-                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
-                                    "lastUpdated": "2024-09-10T17:00:37.953+00:00"
-                                },
-                                "payor": [
-                                    {
-                                        "reference": "Organization/5f0bd1e2-e068-4901-8b17-88737a57a94a"
-                                    }
-                                ],
-                                "status": "active",
-                                "extension": [
-                                    {
-                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
-                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
-                                    }
-                                ],
-                                "identifier": [
-                                    {
-                                        "value": "112233445566",
-                                        "system": "urn:oid:1.2.840.114350.1.13.363.2.7.2.698080"
-                                    }
-                                ],
-                                "beneficiary": {
-                                    "display": "unknown",
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
-                                },
-                                "relationship": {
-                                    "text": "HMO",
-                                    "coding": [
-                                        {
-                                            "system": "urn:oid:2.16.840.1.113883.3.88.12.3221.5.2"
-                                        }
-                                    ]
-                                },
-                                "resourceType": "Coverage"
-                            }
-                        },
-                        {
                             "fullUrl": "urn:uuid:5f0bd1e2-e068-4901-8b17-88737a57a94a",
                             "resource": {
                                 "id": "5f0bd1e2-e068-4901-8b17-88737a57a94a",
@@ -113,14 +72,14 @@
                             }
                         }
                     ],
-                    "total": 3,
+                    "total": 2,
                     "resourceType": "Bundle"
                 },
                 "status": "completed",
                 "filters": {
                     "dateTo": "2025-01-01",
-                    "dateFrom": "2021-01-01",
-                    "resources": "Coverage"
+                    "dateFrom": "2015-01-01",
+                    "resources": "Organization"
                 },
                 "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
             }

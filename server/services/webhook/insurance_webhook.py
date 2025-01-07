@@ -1,44 +1,7 @@
 import json
 from pathlib import Path
 
-# def extract_coverage_info(data):
-#     insurance = []
 
-#     for record in data:
-#         for patient in record.get("patients", []):
-#             entries = patient.get("bundle", {}).get("entry", [])
-#             for entry in entries[1:]:
-#                 resource = entry.get("resource", {})
-#                 print(resource)
-#                 # Check for AllergyIntolerance resource type
-#                 if resource.get("resourceType") == "Organization":
-#                     address=resource.get("address")
-#                     line = ", ".join(address.get("line", []))  # Join multiple lines with a comma
-#                     city = address.get("city", "")
-#                     state = address.get("state", "")
-#                     postal_code = address.get("postalCode", "")
-    
-#                     # Combine them into a formatted string
-#                     formatted_address = f"{line}, {city}, {state} {postal_code}"
-                    
-#                     insurance_row={
-#                         "id": resource.get("id","N/A"),
-#                         "name":resource.get("name","N/A"),
-#                         "address":formatted_address,
-                        
-#                         # "Allergy": reaction.get("substance", {}).get("text", "N/A"),
-#                         # "Manifestation": reaction.get("manifestation", [{}])[0].get("text", "N/A"),
-#                         # "Status": resource.get("clinicalStatus", {}).get("coding", [{}])[0].get("code", "N/A"),
-#                         # "Criticality": resource.get("criticality", "N/A"),
-#                         # "Period": reaction.get("onset", "N/A"),
-                        
-#                         "lastUpdated": resource.get("meta","{}").get("lastUpdated","N/A"),
-                        
-                    
-#                         }
-#                     insurance.append(insurance_row)
-        
-#     return insurance
                         
 def extract_insurance_info(data):
     insurance_info = []
@@ -92,6 +55,6 @@ try:
     allergy_info = extract_insurance_info(data)
     with open(output_file_path, "w") as outfile:
         json.dump(allergy_info, outfile, indent=4)
-    print(f"Allergy data successfully saved to {output_file_path}")
+    print(f"Insurance data successfully saved to {output_file_path}")
 except Exception as e:
     print(f"Error: {e}")

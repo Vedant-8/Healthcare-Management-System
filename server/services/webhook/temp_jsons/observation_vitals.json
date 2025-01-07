@@ -1,0 +1,272 @@
+[
+    {
+        "Observation Code": "BMI",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 39.78,
+        "Unit": "kilogram per square meter",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T04:57:00+00:00",
+        "Effective Date": "2023-09-30T04:57:00+00:00"
+    },
+    {
+        "Observation Code": "Body weight",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 92.4,
+        "Unit": "kilogram",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T04:57:00+00:00",
+        "Effective Date": "2023-09-30T04:57:00+00:00"
+    },
+    {
+        "Observation Code": "Body temperature",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 36.72,
+        "Unit": "degree Celsius",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-10-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Body temperature",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 35.72,
+        "Unit": "degree Celsius",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Body temperature",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 33.72,
+        "Unit": "degree Celsius",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-08-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Body temperature",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 37.72,
+        "Unit": "degree Celsius",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-08-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Systolic blood pressure",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 151,
+        "Unit": "millimeter of mercury",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-10-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Respiratory rate",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 16,
+        "Unit": "per minute",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-08-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Respiratory rate",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 15,
+        "Unit": "per minute",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Respiratory rate",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 18,
+        "Unit": "per minute",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-07-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Diastolic blood pressure",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 67,
+        "Unit": "millimeter of mercury",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-10-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Body height",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 152.4,
+        "Unit": "centimeter",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-10-01T14:30:00+00:00",
+        "Effective Date": "2023-10-01T14:30:00+00:00"
+    },
+    {
+        "Observation Code": "Oxygen saturation in Arterial blood by Pulse oximetry",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 98,
+        "Unit": "percent",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-10-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Oxygen saturation in Arterial blood by Pulse oximetry",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 90,
+        "Unit": "percent",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Oxygen saturation in Arterial blood by Pulse oximetry",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 100,
+        "Unit": "percent",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-08-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Oxygen saturation in Arterial blood by Pulse oximetry",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 95,
+        "Unit": "percent",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-07-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Oxygen saturation in Arterial blood by Pulse oximetry",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 101,
+        "Unit": "percent",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-07-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Heart rate",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 65,
+        "Unit": "per minute",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-10-03T12:10:00+00:00",
+        "Effective Date": "2023-10-03T12:10:00+00:00"
+    },
+    {
+        "Observation Code": "Body height",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 160,
+        "Unit": "centimeter",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-23T02:40:00+00:00",
+        "Effective Date": "2023-09-23T02:40:00+00:00"
+    },
+    {
+        "Observation Code": "Body temperature",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 36.94,
+        "Unit": "degree Celsius",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T11:38:00+00:00",
+        "Effective Date": "2023-09-30T11:38:00+00:00"
+    },
+    {
+        "Observation Code": "Systolic blood pressure",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 110,
+        "Unit": "millimeter of mercury",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T14:39:00+00:00",
+        "Effective Date": "2023-09-30T14:39:00+00:00"
+    },
+    {
+        "Observation Code": "Respiratory rate",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 20,
+        "Unit": "per minute",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T14:39:00+00:00",
+        "Effective Date": "2023-09-30T14:39:00+00:00"
+    },
+    {
+        "Observation Code": "Body weight",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 47.446,
+        "Unit": "kilogram",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T10:06:00+00:00",
+        "Effective Date": "2023-09-30T10:06:00+00:00"
+    },
+    {
+        "Observation Code": "Heart rate",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 69,
+        "Unit": "per minute",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T15:00:00+00:00",
+        "Effective Date": "2023-09-30T15:00:00+00:00"
+    },
+    {
+        "Observation Code": "BMI",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 18.53,
+        "Unit": "kilogram per square meter",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T10:06:00+00:00",
+        "Effective Date": "2023-09-30T10:06:00+00:00"
+    },
+    {
+        "Observation Code": "Diastolic blood pressure",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 58,
+        "Unit": "millimeter of mercury",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T14:39:00+00:00",
+        "Effective Date": "2023-09-30T14:39:00+00:00"
+    },
+    {
+        "Observation Code": "Oxygen saturation in Arterial blood by Pulse oximetry",
+        "Category": "vital-signs",
+        "Status": "unknown",
+        "Value": 99,
+        "Unit": "percent",
+        "Reference Range": "N/A",
+        "Issued Date": "2023-09-30T15:00:00+00:00",
+        "Effective Date": "2023-09-30T15:00:00+00:00"
+    }
+]
