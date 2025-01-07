@@ -15,7 +15,7 @@ def GetPlacesUsingSquare(query:str, radius:int, Latitude: str, Longitude:str)->j
     
     headers = {
         "accept": "application/json",
-        "Authorization": "fsq3PonFUTixKpgTr9bqZexNGX25h+flwdiudTQAJXEdPtU="
+        "Authorization": foursquare_api_key
     }
     
     params = {
