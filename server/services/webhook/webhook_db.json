@@ -1,8 +1,8 @@
 [
     {
         "meta": {
-            "messageId": "15f78fd5-87e1-46e0-82e6-39723886e6f5",
-            "when": "2025-01-07T15:37:36.203Z",
+            "messageId": "9acd8390-0a80-4003-8b24-23add36b7be1",
+            "when": "2025-01-07T15:47:58.134Z",
             "type": "medical.consolidated-data",
             "data": {}
         },
@@ -194,304 +194,1014 @@
                             }
                         },
                         {
-                            "fullUrl": "urn:uuid:a2fb0434-2444-437c-b308-9e3054a7f9d6",
+                            "fullUrl": "urn:uuid:973ceef3-bacd-4ca4-bc33-45d481ff7043",
                             "resource": {
-                                "id": "a2fb0434-2444-437c-b308-9e3054a7f9d6",
+                                "id": "973ceef3-bacd-4ca4-bc33-45d481ff7043",
                                 "meta": {
-                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
-                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml",
+                                    "lastUpdated": "2023-10-30T18:57:16.676+00:00"
                                 },
-                                "patient": {
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
-                                },
-                                "reaction": [
+                                "name": "UH 7A1 GEN MED",
+                                "type": [
                                     {
-                                        "onset": "2021-06-28T00:00:00.000Z",
-                                        "substance": {
-                                            "text": "Molds & Smuts",
-                                            "coding": [
-                                                {
-                                                    "code": "235618",
-                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
-                                                }
-                                            ]
-                                        },
-                                        "manifestation": [
+                                        "coding": [
                                             {
-                                                "text": "Hives",
-                                                "coding": [
-                                                    {
-                                                        "code": "247472004",
-                                                        "system": "http://snomed.info/sct",
-                                                        "display": "Hives"
-                                                    }
-                                                ]
+                                                "code": "SDLOC",
+                                                "system": "https://public.metriport.com/codes/Proprietary/LocationType",
+                                                "display": "Service Delivery Location",
+                                                "userSelected": true
                                             }
                                         ]
                                     }
                                 ],
-                                "recorder": {
-                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                "address": {
+                                    "city": "Ann Arbor",
+                                    "line": [
+                                        "1500 E Medical Center Dr"
+                                    ],
+                                    "state": "MI",
+                                    "postalCode": "48109"
                                 },
                                 "extension": [
                                     {
                                         "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
-                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml"
                                     }
                                 ],
-                                "resourceType": "AllergyIntolerance",
-                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
-                                "clinicalStatus": {
-                                    "coding": [
-                                        {
-                                            "code": "active",
-                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
-                                        }
-                                    ]
-                                }
+                                "identifier": [
+                                    {
+                                        "use": "usual",
+                                        "value": "1.2.840.114350.1.13.277.2.7.2.686980:UH 7A1 GEN MED"
+                                    }
+                                ],
+                                "description": "UH 7A1 GEN MED",
+                                "resourceType": "Location"
                             }
                         },
                         {
-                            "fullUrl": "urn:uuid:55f26d23-c358-4750-8196-ad55b4160d39",
+                            "fullUrl": "urn:uuid:5de2bc79-96a0-428b-83e3-8e0191e6b3ba",
                             "resource": {
-                                "id": "55f26d23-c358-4750-8196-ad55b4160d39",
-                                "meta": {
-                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
-                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
-                                },
-                                "patient": {
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
-                                },
-                                "reaction": [
-                                    {
-                                        "onset": "2021-06-28T00:00:00.000Z",
-                                        "substance": {
-                                            "text": "Nuts",
-                                            "coding": [
-                                                {
-                                                    "code": "235618",
-                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
-                                                }
-                                            ]
+                                "id": "5de2bc79-96a0-428b-83e3-8e0191e6b3ba",
+                                "code": {
+                                    "text": "HC-XR CHEST 1 VIEW; XR CHEST PORTABLE 1 VIEW",
+                                    "coding": [
+                                        {
+                                            "code": "71045",
+                                            "system": "urn:oid:2.16.840.1.113883.6.12",
+                                            "display": "HC-XR CHEST 1 VIEW; XR CHEST PORTABLE 1 VIEW",
+                                            "userSelected": true
                                         },
-                                        "manifestation": [
-                                            {
-                                                "text": "Sneezing",
+                                        {
+                                            "code": "71045",
+                                            "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+                                            "display": "X-RAY EXAM CHEST 1 VIEW",
+                                            "userSelected": false
+                                        },
+                                        {
+                                            "code": "36589-0",
+                                            "system": "urn:oid:2.16.840.1.113883.6.1",
+                                            "display": "XR CHEST PORTABLE 1 VIEW",
+                                            "userSelected": true
+                                        },
+                                        {
+                                            "code": "36589-0",
+                                            "system": "http://loinc.org",
+                                            "display": "XR port Chest AP 1 view",
+                                            "userSelected": false
+                                        }
+                                    ]
+                                },
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml",
+                                    "lastUpdated": "2023-10-30T18:58:10.658+00:00"
+                                },
+                                "status": "completed",
+                                "_status": {
+                                    "extension": [
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#term",
+                                            "valueCodeableConcept": {
                                                 "coding": [
                                                     {
-                                                        "code": "247472004",
-                                                        "system": "http://snomed.info/sct",
-                                                        "display": "Hives"
+                                                        "code": "completed",
+                                                        "system": "https://public.metriport.com/codes/Proprietary/ProcedureStatus",
+                                                        "display": "completed",
+                                                        "userSelected": true
                                                     }
                                                 ]
                                             }
-                                        ]
-                                    }
-                                ],
-                                "recorder": {
-                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        }
+                                    ]
+                                },
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "encounter": {
+                                    "reference": "Encounter/131963be-701b-4959-bea1-a99f36363518"
                                 },
                                 "extension": [
                                     {
+                                        "url": "https://public.metriport.com/fhirextensions#dataSource",
+                                        "extension": [
+                                            {
+                                                "url": "code",
+                                                "valueString": "237ANuzqbkq5oV+RCQhPbA=="
+                                            },
+                                            {
+                                                "url": "name",
+                                                "valueString": "<?xml version=\"1.0\" encoding=\"utf-16\"?><DataSourceFromCda><DocIdRoot>1.2.840.114350.1.13.277.2.7.8.688883.415185033</DocIdRoot><Authors><DataSourceAuthor><LastName>Lazar</LastName><FirstName>Nicholas</FirstName><OrgName>Michigan Medicine</OrgName><PersonNPI>1275157620</PersonNPI><Time>2023-09-25T23:47:12-04:00</Time></DataSourceAuthor></Authors></DataSourceFromCda>"
+                                            }
+                                        ]
+                                    },
+                                    {
                                         "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
-                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml"
                                     }
                                 ],
-                                "resourceType": "AllergyIntolerance",
-                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
-                                "clinicalStatus": {
-                                    "coding": [
-                                        {
-                                            "code": "active",
-                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                "performer": [
+                                    {
+                                        "actor": {
+                                            "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        },
+                                        "function": {
+                                            "text": "Attending physician",
+                                            "coding": [
+                                                {
+                                                    "code": "405279007",
+                                                    "system": "http://snomed.info/sct",
+                                                    "display": "Attending physician"
+                                                }
+                                            ]
                                         }
-                                    ]
-                                }
+                                    }
+                                ],
+                                "resourceType": "Procedure",
+                                "performedDateTime": "2023-09-26T04:02:11+00:00"
                             }
                         },
                         {
-                            "fullUrl": "urn:uuid:613b3130-91ee-42df-8cc3-58619cbd4664",
+                            "fullUrl": "urn:uuid:7e4135e3-d18a-4673-be6e-8bc515c83f80",
                             "resource": {
-                                "id": "613b3130-91ee-42df-8cc3-58619cbd4664",
-                                "meta": {
-                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
-                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
-                                },
-                                "patient": {
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
-                                },
-                                "reaction": [
-                                    {
-                                        "onset": "2021-06-28T00:00:00.000Z",
-                                        "substance": {
-                                            "text": "Ibuprofen",
-                                            "coding": [
-                                                {
-                                                    "code": "235618",
-                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
-                                                }
-                                            ]
+                                "id": "7e4135e3-d18a-4673-be6e-8bc515c83f80",
+                                "code": {
+                                    "text": "BASIC METABOLIC PANEL",
+                                    "coding": [
+                                        {
+                                            "code": "678",
+                                            "system": "https://public.metriport.com/codes/Proprietary.1.2.840.114350.1.13.277.2.7.2.696580/ProcedureCode",
+                                            "display": "BASIC METABOLIC PANEL",
+                                            "userSelected": true
                                         },
-                                        "manifestation": [
-                                            {
-                                                "text": "Sores",
+                                        {
+                                            "code": "80049",
+                                            "system": "https://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+                                            "display": "BASIC METABOLIC PANEL",
+                                            "userSelected": false
+                                        }
+                                    ]
+                                },
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml",
+                                    "lastUpdated": "2023-10-30T18:58:14.444+00:00"
+                                },
+                                "status": "completed",
+                                "_status": {
+                                    "extension": [
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#term",
+                                            "valueCodeableConcept": {
                                                 "coding": [
                                                     {
-                                                        "code": "247472004",
-                                                        "system": "http://snomed.info/sct",
-                                                        "display": "Sores"
+                                                        "code": "completed",
+                                                        "system": "https://public.metriport.com/codes/Proprietary/ProcedureStatus",
+                                                        "display": "completed",
+                                                        "userSelected": true
                                                     }
                                                 ]
                                             }
-                                        ]
-                                    }
-                                ],
-                                "recorder": {
-                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        }
+                                    ]
+                                },
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "encounter": {
+                                    "reference": "Encounter/131963be-701b-4959-bea1-a99f36363518"
                                 },
                                 "extension": [
                                     {
+                                        "url": "https://public.metriport.com/fhirextensions#dataSource",
+                                        "extension": [
+                                            {
+                                                "url": "code",
+                                                "valueString": "SMlpXzFFEiafa5FYARN8FQ=="
+                                            },
+                                            {
+                                                "url": "name",
+                                                "valueString": "<?xml version=\"1.0\" encoding=\"utf-16\"?><DataSourceFromCda><DocIdRoot>1.2.840.114350.1.13.277.2.7.8.688883.415185033</DocIdRoot><Authors><DataSourceAuthor><LastName>Valley</LastName><FirstName>Thomas</FirstName><PersonNPI>1770713513</PersonNPI><Time>2023-09-24T13:27:44-04:00</Time></DataSourceAuthor></Authors></DataSourceFromCda>"
+                                            }
+                                        ]
+                                    },
+                                    {
                                         "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
-                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml"
                                     }
                                 ],
-                                "resourceType": "AllergyIntolerance",
-                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
-                                "clinicalStatus": {
-                                    "coding": [
-                                        {
-                                            "code": "active",
-                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                "performer": [
+                                    {
+                                        "actor": {
+                                            "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        },
+                                        "function": {
+                                            "text": "Attending physician",
+                                            "coding": [
+                                                {
+                                                    "code": "405279007",
+                                                    "system": "http://snomed.info/sct",
+                                                    "display": "Attending physician"
+                                                }
+                                            ]
                                         }
-                                    ]
-                                }
+                                    }
+                                ],
+                                "resourceType": "Procedure",
+                                "performedDateTime": "2023-09-24T17:28:00+00:00"
                             }
                         },
                         {
-                            "fullUrl": "urn:uuid:52b8a96a-89ae-4e0b-a61b-4d9163f193f9",
+                            "fullUrl": "urn:uuid:343306bc-bc31-44fc-96bf-bf79a61cd365",
                             "resource": {
-                                "id": "52b8a96a-89ae-4e0b-a61b-4d9163f193f9",
-                                "meta": {
-                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
-                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
-                                },
-                                "patient": {
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
-                                },
-                                "reaction": [
-                                    {
-                                        "onset": "2021-06-28T00:00:00.000Z",
-                                        "substance": {
-                                            "text": "Chlorine",
-                                            "coding": [
-                                                {
-                                                    "code": "235618",
-                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
-                                                }
-                                            ]
+                                "id": "343306bc-bc31-44fc-96bf-bf79a61cd365",
+                                "code": {
+                                    "text": "FUNGAL CULTURE, NON-BLOOD",
+                                    "coding": [
+                                        {
+                                            "code": "580-1",
+                                            "system": "urn:oid:2.16.840.1.113883.6.1",
+                                            "display": "FUNGAL CULTURE, NON-BLOOD",
+                                            "userSelected": true
                                         },
-                                        "manifestation": [
-                                            {
-                                                "text": "Rash",
+                                        {
+                                            "code": "580-1",
+                                            "system": "http://loinc.org",
+                                            "display": "Fungus Spec Cult",
+                                            "userSelected": false
+                                        },
+                                        {
+                                            "code": "121238005",
+                                            "system": "http://snomed.info/sct",
+                                            "display": "Fungal blood culture (procedure)",
+                                            "userSelected": false
+                                        }
+                                    ]
+                                },
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml",
+                                    "lastUpdated": "2023-10-30T18:58:15.478+00:00"
+                                },
+                                "status": "completed",
+                                "_status": {
+                                    "extension": [
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#term",
+                                            "valueCodeableConcept": {
                                                 "coding": [
                                                     {
-                                                        "code": "247472004",
-                                                        "system": "http://snomed.info/sct",
-                                                        "display": "Rash"
+                                                        "code": "completed",
+                                                        "system": "https://public.metriport.com/codes/Proprietary/ProcedureStatus",
+                                                        "display": "completed",
+                                                        "userSelected": true
                                                     }
                                                 ]
                                             }
-                                        ]
-                                    }
-                                ],
-                                "recorder": {
-                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        }
+                                    ]
+                                },
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "encounter": {
+                                    "reference": "Encounter/131963be-701b-4959-bea1-a99f36363518"
                                 },
                                 "extension": [
                                     {
+                                        "url": "https://public.metriport.com/fhirextensions#dataSource",
+                                        "extension": [
+                                            {
+                                                "url": "code",
+                                                "valueString": "STv5vMHSYLn4t5L0sqwClA=="
+                                            },
+                                            {
+                                                "url": "name",
+                                                "valueString": "<?xml version=\"1.0\" encoding=\"utf-16\"?><DataSourceFromCda><DocIdRoot>1.2.840.114350.1.13.277.2.7.8.688883.415185033</DocIdRoot><Authors><DataSourceAuthor><LastName>Shah</LastName><FirstName>Bilal</FirstName><PersonNPI>1104236637</PersonNPI><Time>2023-09-28T08:49:47-04:00</Time></DataSourceAuthor></Authors></DataSourceFromCda>"
+                                            }
+                                        ]
+                                    },
+                                    {
                                         "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
-                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml"
                                     }
                                 ],
-                                "resourceType": "AllergyIntolerance",
-                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
-                                "clinicalStatus": {
-                                    "coding": [
-                                        {
-                                            "code": "active",
-                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                "performer": [
+                                    {
+                                        "actor": {
+                                            "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        },
+                                        "function": {
+                                            "text": "Attending physician",
+                                            "coding": [
+                                                {
+                                                    "code": "405279007",
+                                                    "system": "http://snomed.info/sct",
+                                                    "display": "Attending physician"
+                                                }
+                                            ]
                                         }
-                                    ]
-                                }
+                                    }
+                                ],
+                                "resourceType": "Procedure",
+                                "performedDateTime": "2023-09-28T16:40:00+00:00"
                             }
                         },
                         {
-                            "fullUrl": "urn:uuid:b7ac4f2d-bc89-4de2-ba2f-b23d87249cb4",
+                            "fullUrl": "urn:uuid:5c14685a-0e49-4193-b3ec-ad1235f56219",
                             "resource": {
-                                "id": "b7ac4f2d-bc89-4de2-ba2f-b23d87249cb4",
-                                "meta": {
-                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
-                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
-                                },
-                                "patient": {
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
-                                },
-                                "reaction": [
-                                    {
-                                        "onset": "2021-06-28T00:00:00.000Z",
-                                        "substance": {
-                                            "text": "Dust",
-                                            "coding": [
-                                                {
-                                                    "code": "235618",
-                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
-                                                }
-                                            ]
+                                "id": "5c14685a-0e49-4193-b3ec-ad1235f56219",
+                                "code": {
+                                    "text": "STERILE BODY FLUID CULTURE, AEROBIC",
+                                    "coding": [
+                                        {
+                                            "code": "636-1",
+                                            "system": "urn:oid:2.16.840.1.113883.6.1",
+                                            "display": "STERILE BODY FLUID CULTURE, AEROBIC",
+                                            "userSelected": true
                                         },
-                                        "manifestation": [
-                                            {
-                                                "text": "Hives",
+                                        {
+                                            "code": "636-1",
+                                            "system": "http://loinc.org",
+                                            "display": "Bacteria Spec BFld Cult",
+                                            "userSelected": false
+                                        },
+                                        {
+                                            "code": "117027007",
+                                            "system": "http://snomed.info/sct",
+                                            "display": "Sterile body fluid culture (procedure)",
+                                            "userSelected": false
+                                        }
+                                    ]
+                                },
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml",
+                                    "lastUpdated": "2023-10-30T18:58:15.753+00:00"
+                                },
+                                "status": "completed",
+                                "_status": {
+                                    "extension": [
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#term",
+                                            "valueCodeableConcept": {
                                                 "coding": [
                                                     {
-                                                        "code": "247472004",
-                                                        "system": "http://snomed.info/sct",
-                                                        "display": "Hives"
+                                                        "code": "completed",
+                                                        "system": "https://public.metriport.com/codes/Proprietary/ProcedureStatus",
+                                                        "display": "completed",
+                                                        "userSelected": true
                                                     }
                                                 ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "encounter": {
+                                    "reference": "Encounter/131963be-701b-4959-bea1-a99f36363518"
+                                },
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhirextensions#dataSource",
+                                        "extension": [
+                                            {
+                                                "url": "code",
+                                                "valueString": "JjWuUijeqHTAcd2TB5hYSw=="
+                                            },
+                                            {
+                                                "url": "name",
+                                                "valueString": "<?xml version=\"1.0\" encoding=\"utf-16\"?><DataSourceFromCda><DocIdRoot>1.2.840.114350.1.13.277.2.7.8.688883.415185033</DocIdRoot><Authors><DataSourceAuthor><LastName>Busschots</LastName><FirstName>Ginette</FirstName><PersonNPI>1821028838</PersonNPI><Time>2023-09-22T23:46:06-04:00</Time></DataSourceAuthor></Authors></DataSourceFromCda>"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml"
+                                    }
+                                ],
+                                "performer": [
+                                    {
+                                        "actor": {
+                                            "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        },
+                                        "function": {
+                                            "text": "Attending physician",
+                                            "coding": [
+                                                {
+                                                    "code": "405279007",
+                                                    "system": "http://snomed.info/sct",
+                                                    "display": "Attending physician"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "resourceType": "Procedure",
+                                "performedDateTime": "2023-09-23T04:45:00+00:00"
+                            }
+                        },
+                        {
+                            "fullUrl": "urn:uuid:c652d9b2-ac8a-42b6-8408-03b0bd3054a8",
+                            "resource": {
+                                "id": "c652d9b2-ac8a-42b6-8408-03b0bd3054a8",
+                                "code": {
+                                    "text": "ESTIMATED GLOMERULAR FILTRATION RATE",
+                                    "coding": [
+                                        {
+                                            "code": "98979-8",
+                                            "system": "urn:oid:2.16.840.1.113883.6.1",
+                                            "display": "ESTIMATED GLOMERULAR FILTRATION RATE",
+                                            "userSelected": true
+                                        },
+                                        {
+                                            "code": "98979-8",
+                                            "system": "http://loinc.org",
+                                            "display": "eGFRcr SerPlBld CKD-EPI 2021",
+                                            "userSelected": false
+                                        }
+                                    ]
+                                },
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml",
+                                    "lastUpdated": "2023-10-30T18:58:16.515+00:00"
+                                },
+                                "status": "completed",
+                                "_status": {
+                                    "extension": [
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#term",
+                                            "valueCodeableConcept": {
+                                                "coding": [
+                                                    {
+                                                        "code": "completed",
+                                                        "system": "https://public.metriport.com/codes/Proprietary/ProcedureStatus",
+                                                        "display": "completed",
+                                                        "userSelected": true
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "encounter": {
+                                    "reference": "Encounter/131963be-701b-4959-bea1-a99f36363518"
+                                },
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhirextensions#dataSource",
+                                        "extension": [
+                                            {
+                                                "url": "code",
+                                                "valueString": "22BFNA2mhrxKtozJH6OvTg=="
+                                            },
+                                            {
+                                                "url": "name",
+                                                "valueString": "<?xml version=\"1.0\" encoding=\"utf-16\"?><DataSourceFromCda><DocIdRoot>1.2.840.114350.1.13.277.2.7.8.688883.415185033</DocIdRoot><Authors><DataSourceAuthor><LastName>Haggins</LastName><FirstName>Adrianne</FirstName><PersonNPI>1447412044</PersonNPI><Time>2023-09-22T22:30:00-04:00</Time></DataSourceAuthor></Authors></DataSourceFromCda>"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml"
+                                    }
+                                ],
+                                "performer": [
+                                    {
+                                        "actor": {
+                                            "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        },
+                                        "function": {
+                                            "text": "Attending physician",
+                                            "coding": [
+                                                {
+                                                    "code": "405279007",
+                                                    "system": "http://snomed.info/sct",
+                                                    "display": "Attending physician"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ],
+                                "resourceType": "Procedure",
+                                "performedDateTime": "2023-09-23T02:30:00+00:00"
+                            }
+                        },
+                        {
+                            "fullUrl": "urn:uuid:131963be-701b-4959-bea1-a99f36363518",
+                            "resource": {
+                                "id": "131963be-701b-4959-bea1-a99f36363518",
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml",
+                                    "lastUpdated": "2023-10-30T18:57:16.200+00:00"
+                                },
+                                "type": [
+                                    {
+                                        "coding": [
+                                            {
+                                                "code": "Hospital Encounter",
+                                                "system": "https://public.metriport.com/codes/Proprietary/PatientType",
+                                                "display": "Hospital Encounter",
+                                                "userSelected": true
+                                            },
+                                            {
+                                                "code": "21",
+                                                "system": "https://www.cms.gov/Medicare/Coding/place-of-service-codes/Place_of_Service_Code_Set",
+                                                "display": "Inpatient Hospital",
+                                                "userSelected": false
+                                            },
+                                            {
+                                                "code": "01",
+                                                "system": "https://rosetta..com/UBFacilityType",
+                                                "display": "Hospital",
+                                                "userSelected": false
+                                            },
+                                            {
+                                                "code": "IMP",
+                                                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                                                "display": "IMP",
+                                                "userSelected": false
                                             }
                                         ]
                                     }
                                 ],
-                                "recorder": {
-                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
-                                },
-                                "extension": [
-                                    {
-                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
-                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
-                                    }
-                                ],
-                                "resourceType": "AllergyIntolerance",
-                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
-                                "clinicalStatus": {
-                                    "coding": [
+                                "class": {
+                                    "code": "IMP",
+                                    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                                    "extension": [
                                         {
-                                            "code": "active",
-                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                            "url": "https://public.metriport.com/fhirextensions#coding",
+                                            "valueCoding": {
+                                                "code": "IMP",
+                                                "system": "https://public.metriport.com/codes/Proprietary.2.16.840.1.113883.5.4/PatientClass",
+                                                "display": "Inpatient Encounter",
+                                                "userSelected": true
+                                            }
+                                        },
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#coding",
+                                            "valueCoding": {
+                                                "code": "I",
+                                                "system": "https://public.metriport.com/codes/HL70004/Reference",
+                                                "display": "Inpatient",
+                                                "userSelected": false
+                                            }
+                                        },
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#coding",
+                                            "valueCoding": {
+                                                "code": "3",
+                                                "system": "https://public.metriport.com/codes/Proprietary.1.2.840.114350.1.72.1.30/PatientClass",
+                                                "display": "Hospital Encounter",
+                                                "userSelected": true
+                                            }
+                                        },
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#coding",
+                                            "valueCoding": {
+                                                "code": "212",
+                                                "system": "https://public.metriport.com/codes/Proprietary.1.2.840.114350.1.72.1.30/PatientClass",
+                                                "display": "Emergency",
+                                                "userSelected": true
+                                            }
+                                        },
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#coding",
+                                            "valueCoding": {
+                                                "code": "EMER",
+                                                "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                                                "display": "EMER",
+                                                "userSelected": false
+                                            }
+                                        },
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#coding",
+                                            "valueCoding": {
+                                                "code": "E",
+                                                "system": "https://public.metriport.com/codes/HL70004/Reference",
+                                                "display": "Emergency",
+                                                "userSelected": false
+                                            }
+                                        },
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#coding",
+                                            "valueCoding": {
+                                                "code": "1",
+                                                "system": "https://public.metriport.com/codes/Proprietary.1.2.840.114350.1.72.1.30.1/PatientClass",
+                                                "display": "1",
+                                                "userSelected": true
+                                            }
+                                        },
+                                        {
+                                            "url": "https://public.metriport.com/fhirextensions#text",
+                                            "valueString": "Hospital Encounter"
                                         }
                                     ]
+                                },
+                                "period": {
+                                    "end": "2023-09-30T17:30:00-04:00",
+                                    "start": "2023-09-22T22:18:00-04:00"
+                                },
+                                "status": "finished",
+                                "subject": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "location": [
+                                    {
+                                        "period": {
+                                            "end": "2023-09-30T17:30:00-04:00",
+                                            "start": "2023-09-22T22:18:00-04:00"
+                                        },
+                                        "location": {
+                                            "display": "UH 7A1 GEN MED",
+                                            "reference": "Location/973ceef3-bacd-4ca4-bc33-45d481ff7043"
+                                        }
+                                    }
+                                ],
+                                "diagnosis": [
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/d80c7984-82f2-427b-8ebb-e44c206b2d29"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/f0549fcc-b6eb-411c-af06-5e5d55dc650d"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/a1ad0ff8-b578-4f53-9606-612b49132a77"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/f8f0e118-7739-4aba-a43e-9dc79839d9d7"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/8cae3a82-f921-450d-9e26-0374b18b9815"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/7179ec9f-bb4f-4cff-9be2-98f9907286d0"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/197136b3-7b75-4e6d-999f-db311bae9b02"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/6f8d5fc5-df81-4802-9167-de3f048a6ff4"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/2db40f56-338b-49e7-9be9-891df91c35ac"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/f5159bc3-d74a-4856-8686-8ea565b66a2b"
+                                        }
+                                    },
+                                    {
+                                        "use": {
+                                            "coding": [
+                                                {
+                                                    "code": "CC",
+                                                    "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role"
+                                                },
+                                                {
+                                                    "code": "EncounterDiagnosis",
+                                                    "system": "https://public.metriport.com/codes/Proprietary/DiagnosisType",
+                                                    "display": "Encounter Diagnosis",
+                                                    "userSelected": true
+                                                }
+                                            ]
+                                        },
+                                        "condition": {
+                                            "reference": "Condition/8932f9d6-4b85-46cd-b710-ff76901af51a"
+                                        }
+                                    }
+                                ],
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhirextensions#dataSource",
+                                        "extension": [
+                                            {
+                                                "url": "code",
+                                                "valueString": "BPERR8aN/r7BKbM7EEhcCA=="
+                                            },
+                                            {
+                                                "url": "name",
+                                                "valueString": "<?xml version=\"1.0\" encoding=\"utf-16\"?><DataSourceFromCda><DocIdRoot>1.2.840.114350.1.13.277.2.7.8.688883.415185033</DocIdRoot><Authors><DataSourceAuthor><OrgName>Michigan Medicine</OrgName></DataSourceAuthor></Authors></DataSourceFromCda>"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_f53ca611-4e5f-440c-88e2-0403453fc042.xml"
+                                    }
+                                ],
+                                "identifier": [
+                                    {
+                                        "use": "usual",
+                                        "value": "344935825",
+                                        "system": "https://public.metriport.com/encounteridentifiers"
+                                    }
+                                ],
+                                "reasonCode": [
+                                    {
+                                        "text": "Shortness of Breath",
+                                        "coding": [
+                                            {
+                                                "code": "267036007",
+                                                "system": "urn:oid:2.16.840.1.113883.6.96",
+                                                "display": "DYSPNEA",
+                                                "userSelected": true
+                                            },
+                                            {
+                                                "code": "267036007",
+                                                "system": "http://snomed.info/sct",
+                                                "display": "Dyspnea (finding)",
+                                                "userSelected": false
+                                            },
+                                            {
+                                                "code": "R06.00",
+                                                "system": "http://hl7.org/fhir/sid/icd-10-cm",
+                                                "display": "Dyspnea, unspecified",
+                                                "userSelected": false
+                                            },
+                                            {
+                                                "code": "EPIC#RSRP0006",
+                                                "system": "https://public.metriport.com/codes/Proprietary.1.2.840.114350.1.13.277.2.7.3.727688.40/EncounterReason",
+                                                "display": "SYMPTOMS - RESPIRATORY - SHORTNESS OF BREATH",
+                                                "userSelected": true
+                                            },
+                                            {
+                                                "code": "106048009",
+                                                "system": "http://snomed.info/sct",
+                                                "display": "Respiratory finding (finding)",
+                                                "userSelected": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "text": "Fever",
+                                        "coding": [
+                                            {
+                                                "code": "271897009",
+                                                "system": "urn:oid:2.16.840.1.113883.6.96",
+                                                "display": "O/E - FEVER",
+                                                "userSelected": true
+                                            },
+                                            {
+                                                "code": "271897009",
+                                                "system": "http://snomed.info/sct",
+                                                "display": "On examination - fever (finding)",
+                                                "userSelected": false
+                                            },
+                                            {
+                                                "code": "EPIC#RSCO0003",
+                                                "system": "https://public.metriport.com/codes/Proprietary.1.2.840.114350.1.13.277.2.7.3.727688.40/EncounterReason",
+                                                "display": "SYMPTOMS - CONSTITUTIONAL - FEVER",
+                                                "userSelected": true
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "participant": [
+                                    {
+                                        "type": [
+                                            {
+                                                "coding": [
+                                                    {
+                                                        "code": "AttendingPhysician",
+                                                        "system": "https://public.metriport.com/fhircodes#CaregiverRelationshipType",
+                                                        "display": "Attending Physician",
+                                                        "userSelected": true
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "period": {
+                                            "start": "2023-09-22T22:18:00-04:00"
+                                        },
+                                        "extension": [
+                                            {
+                                                "url": "https://public.metriport.com/fhirextensions#dataSource",
+                                                "extension": [
+                                                    {
+                                                        "url": "code",
+                                                        "valueString": "BPERR8aN/r7BKbM7EEhcCA=="
+                                                    },
+                                                    {
+                                                        "url": "name",
+                                                        "valueString": "<?xml version=\"1.0\" encoding=\"utf-16\"?><DataSourceFromCda><DocIdRoot>1.2.840.114350.1.13.277.2.7.8.688883.415185033</DocIdRoot><Authors><DataSourceAuthor><OrgName>Michigan Medicine</OrgName></DataSourceAuthor></Authors></DataSourceFromCda>"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "individual": {
+                                            "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                        }
+                                    }
+                                ],
+                                "resourceType": "Encounter",
+                                "hospitalization": {
+                                    "dischargeDisposition": {
+                                        "coding": [
+                                            {
+                                                "code": "1",
+                                                "system": "https://public.metriport.com/codes/Proprietary.1.2.840.114350.1.13.277.2.7.4.698084.18888/DischargeType",
+                                                "display": "11 Home or Self Care",
+                                                "userSelected": true
+                                            },
+                                            {
+                                                "code": "01",
+                                                "system": "https://www.nubc.org/CodeSystem/PatDischargeStatus",
+                                                "display": "DISCHARGED TO HOME OR SELF CARE (ROUTINE DISCHARGE)",
+                                                "userSelected": false
+                                            }
+                                        ]
+                                    }
                                 }
                             }
                         }
                     ],
-                    "total": 7,
+                    "total": 9,
                     "resourceType": "Bundle"
                 },
                 "status": "completed",
                 "filters": {
                     "dateTo": "2024-01-01",
                     "dateFrom": "2021-01-01",
-                    "resources": "AllergyIntolerance"
+                    "resources": "Procedure"
                 },
                 "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
             }

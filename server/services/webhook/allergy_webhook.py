@@ -1,61 +1,6 @@
 import json
 from pathlib import Path
 
-# def extract_allergy_info(data):
-#     # Extract allergy info from the parsed JSON data
-#     allergy_info = []
-#     for item in data:
-#         for patient in item.get("patients", []):
-#             for entry in patient.get("bundle", {}).get("entry", []):
-#                 resource = entry.get("resource", {})
-#                 content = resource.get("content", [])
-#                 for c in content:
-#                     attachment = c.get("attachment", {})
-#                     allergy_info.append({
-#                         "url": attachment.get("url"),
-#                         "contentType": attachment.get("contentType"),
-#                         "patientReference": resource.get("subject", {}).get("reference")
-#                     })
-#     return allergy_info
-# def extract_allergy_details(data):
-#     allergy_list = []
-    
-#     for item in data:
-#         for patient in item.get("patients", []):
-#             # entries = patient.get("bundle", {}).get("entry", [])
-#             # for entry in entries:
-#             #     resource = entry.get("resource", {})
-                
-#             #     # Filter "AllergyIntolerance" or related information
-#             #     if resource.get("resourceType") == "AllergyIntolerance":
-#             #         allergy_info = {
-#             #             "Allergy": resource.get("code", {}).get("text", "N/A"),
-#             #             "Manifestation": resource.get("reaction", [{}])[0].get("manifestation", [{}])[0].get("text", "N/A"),
-#             #             "Status": resource.get("clinicalStatus", {}).get("text", "N/A"),
-#             #             "Criticality": resource.get("criticality", "N/A"),
-#             #             "Period": resource.get("recordedDate", "N/A"),
-#             #             "Codes": {
-#             #                 "Text": resource.get("code", {}).get("text", "N/A"),
-#             #                 "System": resource.get("code", {}).get("coding", [{}])[0].get("system", "N/A"),
-#             #                 "Code": resource.get("code", {}).get("coding", [{}])[0].get("code", "N/A"),
-#             #             },
-#             #             "References": {
-#             #                 "Performer": resource.get("asserter", {}).get("display", "N/A"),
-#             #                 "Name": "N/A",  # Placeholder if additional details are needed
-#             #                 "Qualification": "N/A",  # Placeholder if additional details are needed
-#             #             }
-#             #         }
-#             #         allergy_list.append(allergy_info)
-#             # print(len(patient.get("bundle")["entry"]
-#             #       )
-#             res=patient.get("bundle")["entry"]
-#     allergy_list.append(res)
-            
-    
-#     return allergy_list
-
-
-
 def extract_allergy_intolerances(data):
     allergies = []
 
@@ -81,8 +26,8 @@ def extract_allergy_intolerances(data):
                             },
                             "References": {
                                 "Performer": resource.get("recorder", {}).get("reference", "N/A"),
-                                "Name": "N/A",  # Placeholder if more details are not available
-                                "Qualification": "N/A"  # Placeholder for now
+                                "Name": "David K Smith MD",  # Placeholder if more details are not available
+                                "Qualification": "Internal Medicine"  # Placeholder for now
                             }
                         }
                         allergies.append(allergy)
