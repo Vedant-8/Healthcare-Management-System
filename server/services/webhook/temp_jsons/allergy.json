@@ -1,0 +1,87 @@
+[
+    {
+        "Allergy": "Molds & Smuts",
+        "Manifestation": "Hives",
+        "Status": "active",
+        "Criticality": "N/A",
+        "Period": "2021-06-28T00:00:00.000Z",
+        "Codes": {
+            "Text": "Molds & Smuts",
+            "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "Code": "235618"
+        },
+        "References": {
+            "Performer": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8",
+            "Name": "David K Smith MD",
+            "Qualification": "Internal Medicine"
+        }
+    },
+    {
+        "Allergy": "Nuts",
+        "Manifestation": "Sneezing",
+        "Status": "active",
+        "Criticality": "N/A",
+        "Period": "2021-06-28T00:00:00.000Z",
+        "Codes": {
+            "Text": "Nuts",
+            "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "Code": "235618"
+        },
+        "References": {
+            "Performer": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8",
+            "Name": "David K Smith MD",
+            "Qualification": "Internal Medicine"
+        }
+    },
+    {
+        "Allergy": "Ibuprofen",
+        "Manifestation": "Sores",
+        "Status": "active",
+        "Criticality": "N/A",
+        "Period": "2021-06-28T00:00:00.000Z",
+        "Codes": {
+            "Text": "Ibuprofen",
+            "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "Code": "235618"
+        },
+        "References": {
+            "Performer": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8",
+            "Name": "David K Smith MD",
+            "Qualification": "Internal Medicine"
+        }
+    },
+    {
+        "Allergy": "Chlorine",
+        "Manifestation": "Rash",
+        "Status": "active",
+        "Criticality": "N/A",
+        "Period": "2021-06-28T00:00:00.000Z",
+        "Codes": {
+            "Text": "Chlorine",
+            "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "Code": "235618"
+        },
+        "References": {
+            "Performer": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8",
+            "Name": "David K Smith MD",
+            "Qualification": "Internal Medicine"
+        }
+    },
+    {
+        "Allergy": "Dust",
+        "Manifestation": "Hives",
+        "Status": "active",
+        "Criticality": "N/A",
+        "Period": "2021-06-28T00:00:00.000Z",
+        "Codes": {
+            "Text": "Dust",
+            "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "Code": "235618"
+        },
+        "References": {
+            "Performer": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8",
+            "Name": "David K Smith MD",
+            "Qualification": "Internal Medicine"
+        }
+    }
+]
