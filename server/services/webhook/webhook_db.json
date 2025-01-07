@@ -1,9 +1,10 @@
 [
     {
         "meta": {
-            "messageId": "94d013c2-28dc-40fe-b7cc-c60f4f0c5c77",
-            "when": "2025-01-06T19:35:59.331Z",
-            "type": "medical.consolidated-data"
+            "messageId": "15f78fd5-87e1-46e0-82e6-39723886e6f5",
+            "when": "2025-01-07T15:37:36.203Z",
+            "type": "medical.consolidated-data",
+            "data": {}
         },
         "patients": [
             {
@@ -11,111 +12,485 @@
                     "type": "searchset",
                     "entry": [
                         {
+                            "fullUrl": "urn:uuid:01943bc1-fd38-7c9c-9947-14f7458a7428",
                             "resource": {
-                                "content": [
+                                "id": "01943bc1-fd38-7c9c-9947-14f7458a7428",
+                                "name": [
                                     {
-                                        "attachment": {
-                                            "url": "https://metriport-seed-data-sandbox.s3.us-west-2.amazonaws.com/andreas_MR.html.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWX27OVJFB27EUOWU%2F20250106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250106T193559Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGMaCXVzLXdlc3QtMiJIMEYCIQCWq%2FDTVUtBrLat4cIqKuWB5x6fP7xZck14W5ibCebrTAIhAOmu3AsT7jZw%2BmQEdQSeK9FqhpW4Owh9lg4LqTJ7eTIqKtEECEwQARoMNDYzNTE5Nzg3NTk0Igy6beX3fgLXd%2FVGoMwqrgRctjoegVNZm4rPpJhFVgd3Slf%2BwiK55m%2FnjVNCdEtZFoUNtZasZByCtekPSUlP9wLBkllR2r1ezZrHUSBn%2FOnuE%2Fpgg1cYvEhrdXpbZWQIx%2B1OX2GJFCHfaZHwE1Eu%2BUjhbA2qMFrnCbX4DuO0w6Vjdrb2Uq%2Fj3KKCrvAFd0IoW5gBUAp9PhyRlF9VsxJIlKH7DZKFEaokr5LV%2BTtg74OExp0x9eAUYmGyhFpEG2MbcvD6IqwfmpN1p3jPrHvBrZ37NuISX0%2FUitE0RPTsCRgzsbbnNHgQ411bJCx4hGpYS7JqYQ2V9HvgwK8hLqQHm9tD%2B2Xt7PsIBj2YVsHAgY91aK%2FAOUQ2OIvO2Q%2F8HmQU0QrbMYvrES2ls%2B7Z0Xh9qJSD%2FgJ7EDTuWXtZkjk82q9vGKvNMeO3fkuj2eI3OYh4FzHjJNSaIX0BchEULcP%2FH%2Fk7fwMUmWhnbm8tnnWW%2FP5aKhSAox%2BVGuCsa7QuAMrJ9mZGjMFjKLg0j1SHiV0R0yOiR3o9gF0GbNFn1%2FnZC%2BwMjJd13jh3fTOilQb%2FeqtVn5lPU2LRgPp9DEcdDA9h%2F8IAkiUUk0QbyciMgTnX9VeOanYvDrakRTDgs%2FtBIIw1Lt640lUV9mNnKSffUz18Bs8R3Ym8oRy5e5lcn8JpxiWvHGF3v89Fd8MN%2FSZHL1aNjNPeN%2FVdBe00aR%2FZRPcPkr0HMKVdD4oeMgePkBRt8FncI035J5SaXHANVKmiTRUwncbwuwY6pgHz0t1J41CFzusi6ZIRxFjwuRXgRGxkOzqJMR5cOgvoSAjBnHw6jJK4fHBhZsCoRaPKmMwJfF%2FHmH6y%2Fz957WdsJU1fm7HPWyQgUErcmA3txQnn2tI6lWCRRqXWWqrK6okr9G5tF8TtlMM2BZwWTTum7dY2Yo0uhXRZH7we8qaDJPnQXXNcA%2B8DYAVr%2B3BrJ6C2hRr5UdYXRg8OGKUZ43rK8xXQT%2FeS&X-Amz-Signature=d782eea2fdbdf08c90b5ef2940e1495d0a5191d5c69c63b294d1907cf59a55b8&X-Amz-SignedHeaders=host",
-                                            "contentType": "application/pdf"
-                                        }
+                                        "given": [
+                                            "Andreas"
+                                        ],
+                                        "family": "Sims"
                                     }
                                 ],
-                                "subject": {
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                "text": {
+                                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Andreas Sims</div>",
+                                    "status": "generated"
                                 },
-                                "resourceType": "DocumentReference"
+                                "gender": "male",
+                                "address": [
+                                    {
+                                        "city": "Jefferson City",
+                                        "line": [
+                                            "4430 York St"
+                                        ],
+                                        "state": "MO",
+                                        "country": "USA",
+                                        "postalCode": "64000"
+                                    }
+                                ],
+                                "birthDate": "1952-01-01",
+                                "resourceType": "Patient"
                             }
-                        }
-                    ],
-                    "total": 1,
-                    "resourceType": "Bundle"
-                },
-                "status": "completed",
-                "filters": {
-                    "dateTo": "2025-01-01",
-                    "dateFrom": "2023-05-26",
-                    "resources": "MedicationRequest"
-                },
-                "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
-            }
-        ]
-    },
-    {
-        "meta": {
-            "messageId": "b04f187c-56ab-478c-b9e6-86c350438418",
-            "when": "2025-01-06T19:37:06.752Z",
-            "type": "medical.consolidated-data"
-        },
-        "patients": [
-            {
-                "bundle": {
-                    "type": "searchset",
-                    "entry": [
+                        },
                         {
+                            "fullUrl": "urn:uuid:3ee4062f-eee4-4e73-a03e-a23da82902d8",
                             "resource": {
-                                "content": [
+                                "id": "3ee4062f-eee4-4e73-a03e-a23da82902d8",
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_bca09742-2bea-4f32-b4f0-6f64eb76d391.xml",
+                                    "lastUpdated": "2023-10-30T18:56:45.697+00:00"
+                                },
+                                "name": [
                                     {
-                                        "attachment": {
-                                            "url": "https://metriport-seed-data-sandbox.s3.us-west-2.amazonaws.com/andreas_MR.html.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWX27OVJFB27EUOWU%2F20250106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250106T193706Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGMaCXVzLXdlc3QtMiJIMEYCIQCWq%2FDTVUtBrLat4cIqKuWB5x6fP7xZck14W5ibCebrTAIhAOmu3AsT7jZw%2BmQEdQSeK9FqhpW4Owh9lg4LqTJ7eTIqKtEECEwQARoMNDYzNTE5Nzg3NTk0Igy6beX3fgLXd%2FVGoMwqrgRctjoegVNZm4rPpJhFVgd3Slf%2BwiK55m%2FnjVNCdEtZFoUNtZasZByCtekPSUlP9wLBkllR2r1ezZrHUSBn%2FOnuE%2Fpgg1cYvEhrdXpbZWQIx%2B1OX2GJFCHfaZHwE1Eu%2BUjhbA2qMFrnCbX4DuO0w6Vjdrb2Uq%2Fj3KKCrvAFd0IoW5gBUAp9PhyRlF9VsxJIlKH7DZKFEaokr5LV%2BTtg74OExp0x9eAUYmGyhFpEG2MbcvD6IqwfmpN1p3jPrHvBrZ37NuISX0%2FUitE0RPTsCRgzsbbnNHgQ411bJCx4hGpYS7JqYQ2V9HvgwK8hLqQHm9tD%2B2Xt7PsIBj2YVsHAgY91aK%2FAOUQ2OIvO2Q%2F8HmQU0QrbMYvrES2ls%2B7Z0Xh9qJSD%2FgJ7EDTuWXtZkjk82q9vGKvNMeO3fkuj2eI3OYh4FzHjJNSaIX0BchEULcP%2FH%2Fk7fwMUmWhnbm8tnnWW%2FP5aKhSAox%2BVGuCsa7QuAMrJ9mZGjMFjKLg0j1SHiV0R0yOiR3o9gF0GbNFn1%2FnZC%2BwMjJd13jh3fTOilQb%2FeqtVn5lPU2LRgPp9DEcdDA9h%2F8IAkiUUk0QbyciMgTnX9VeOanYvDrakRTDgs%2FtBIIw1Lt640lUV9mNnKSffUz18Bs8R3Ym8oRy5e5lcn8JpxiWvHGF3v89Fd8MN%2FSZHL1aNjNPeN%2FVdBe00aR%2FZRPcPkr0HMKVdD4oeMgePkBRt8FncI035J5SaXHANVKmiTRUwncbwuwY6pgHz0t1J41CFzusi6ZIRxFjwuRXgRGxkOzqJMR5cOgvoSAjBnHw6jJK4fHBhZsCoRaPKmMwJfF%2FHmH6y%2Fz957WdsJU1fm7HPWyQgUErcmA3txQnn2tI6lWCRRqXWWqrK6okr9G5tF8TtlMM2BZwWTTum7dY2Yo0uhXRZH7we8qaDJPnQXXNcA%2B8DYAVr%2B3BrJ6C2hRr5UdYXRg8OGKUZ43rK8xXQT%2FeS&X-Amz-Signature=3e307ea19f659b54a01ddd3d27d72648f016df994498f91dca61c6aa304b5e96&X-Amz-SignedHeaders=host",
-                                            "contentType": "application/pdf"
+                                        "use": "official",
+                                        "_use": {
+                                            "extension": [
+                                                {
+                                                    "url": "https://public.metriport.com/fhirextensions#term",
+                                                    "valueCodeableConcept": {
+                                                        "coding": [
+                                                            {
+                                                                "code": "LegalName",
+                                                                "system": "https://public.metriport.com/fhircodes#NameType",
+                                                                "display": "Legal Name",
+                                                                "userSelected": true
+                                                            },
+                                                            {
+                                                                "code": "L",
+                                                                "system": "http://terminology.hl7.org/CodeSystem/v2-0200",
+                                                                "display": "Official Registry Name",
+                                                                "userSelected": false
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "given": [
+                                            "David",
+                                            "K"
+                                        ],
+                                        "family": "Smith",
+                                        "suffix": [
+                                            "MD"
+                                        ]
+                                    }
+                                ],
+                                "address": [
+                                    {
+                                        "use": "home",
+                                        "city": "New York",
+                                        "line": [
+                                            "543 Doctor Avenue"
+                                        ],
+                                        "state": "NY",
+                                        "postalCode": "10001"
+                                    }
+                                ],
+                                "telecom": [
+                                    {
+                                        "use": "home",
+                                        "_use": {
+                                            "extension": [
+                                                {
+                                                    "url": "https://public.metriport.com/fhirextensions#term",
+                                                    "valueCodeableConcept": {
+                                                        "coding": [
+                                                            {
+                                                                "code": "HP",
+                                                                "system": "https://public.metriport.com/codes/Proprietary/ContactInfoUseCode",
+                                                                "display": "primary home",
+                                                                "userSelected": true
+                                                            },
+                                                            {
+                                                                "code": "HP",
+                                                                "system": "http://hl7.org/fhir/v3/AddressUse",
+                                                                "display": "Primary home",
+                                                                "userSelected": false
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        "value": "tel:212-555-7351",
+                                        "system": "phone",
+                                        "_system": {
+                                            "extension": [
+                                                {
+                                                    "url": "https://public.metriport.com/fhirextensions#term",
+                                                    "valueCodeableConcept": {
+                                                        "coding": [
+                                                            {
+                                                                "code": "HomePhone",
+                                                                "system": "https://public.metriport.com/fhircodes#ContactInfoType",
+                                                                "display": "Home Phone",
+                                                                "userSelected": true
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
                                         }
                                     }
                                 ],
-                                "subject": {
-                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
-                                },
-                                "resourceType": "DocumentReference"
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_bca09742-2bea-4f32-b4f0-6f64eb76d391.xml"
+                                    }
+                                ],
+                                "identifier": [
+                                    {
+                                        "use": "usual",
+                                        "value": "P/0KJ2NOQx0H1BySKKZKvw==",
+                                        "system": "https://public.metriport.com/identifiers//CaregiverIdentifier//1.3.6.1.4.1.37608.1.3.6.1.4.1.37608/ISO"
+                                    },
+                                    {
+                                        "value": "7v1bjE+iv1TpK7xwyhaXbw==",
+                                        "system": "https://public.metriport.com/identifiers/Proprietary/1.3.6.1.4.1.37608_"
+                                    },
+                                    {
+                                        "value": "c68394cb-57ad-e411-8260-0050b664cec5",
+                                        "system": "https://public.metriport.com/identifiers/Proprietary/1.3.6.1.4.1.37608"
+                                    }
+                                ],
+                                "resourceType": "Practitioner",
+                                "qualification": [
+                                    {
+                                        "code": {
+                                            "text": "Internal Medicine",
+                                            "coding": [
+                                                {
+                                                    "code": "207R00000X",
+                                                    "system": "http://nucc.org/provider-taxonomy",
+                                                    "display": "INTERNAL MEDICINE PHYSICIAN"
+                                                },
+                                                {
+                                                    "code": "32",
+                                                    "system": "urn:oid:1.2.840.114350.1.72.1.7.7.10.688867.4160",
+                                                    "display": "Internal Medicine"
+                                                },
+                                                {
+                                                    "code": "17",
+                                                    "system": "urn:oid:1.2.840.114350.1.13.284.2.7.10.836982.1050",
+                                                    "display": "Internal Medicine"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
                             }
-                        }
-                    ],
-                    "total": 1,
-                    "resourceType": "Bundle"
-                },
-                "status": "completed",
-                "filters": {
-                    "dateTo": "",
-                    "dateFrom": "",
-                    "resources": "MedicationRequest"
-                },
-                "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
-            }
-        ]
-    },
-    {
-        "meta": {
-            "messageId": "0cdcdcb0-602c-4692-a30b-b65d43b1663a",
-            "when": "2025-01-06T19:39:19.942Z",
-            "type": "medical.consolidated-data"
-        },
-        "patients": [
-            {
-                "bundle": {
-                    "type": "searchset",
-                    "entry": [
+                        },
                         {
+                            "fullUrl": "urn:uuid:a2fb0434-2444-437c-b308-9e3054a7f9d6",
                             "resource": {
-                                "content": [
-                                    {
-                                        "attachment": {
-                                            "url": "https://metriport-seed-data-sandbox.s3.us-west-2.amazonaws.com/andreas_MR.html.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAWX27OVJFB27EUOWU%2F20250106%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250106T193919Z&X-Amz-Expires=60&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEGMaCXVzLXdlc3QtMiJIMEYCIQCWq%2FDTVUtBrLat4cIqKuWB5x6fP7xZck14W5ibCebrTAIhAOmu3AsT7jZw%2BmQEdQSeK9FqhpW4Owh9lg4LqTJ7eTIqKtEECEwQARoMNDYzNTE5Nzg3NTk0Igy6beX3fgLXd%2FVGoMwqrgRctjoegVNZm4rPpJhFVgd3Slf%2BwiK55m%2FnjVNCdEtZFoUNtZasZByCtekPSUlP9wLBkllR2r1ezZrHUSBn%2FOnuE%2Fpgg1cYvEhrdXpbZWQIx%2B1OX2GJFCHfaZHwE1Eu%2BUjhbA2qMFrnCbX4DuO0w6Vjdrb2Uq%2Fj3KKCrvAFd0IoW5gBUAp9PhyRlF9VsxJIlKH7DZKFEaokr5LV%2BTtg74OExp0x9eAUYmGyhFpEG2MbcvD6IqwfmpN1p3jPrHvBrZ37NuISX0%2FUitE0RPTsCRgzsbbnNHgQ411bJCx4hGpYS7JqYQ2V9HvgwK8hLqQHm9tD%2B2Xt7PsIBj2YVsHAgY91aK%2FAOUQ2OIvO2Q%2F8HmQU0QrbMYvrES2ls%2B7Z0Xh9qJSD%2FgJ7EDTuWXtZkjk82q9vGKvNMeO3fkuj2eI3OYh4FzHjJNSaIX0BchEULcP%2FH%2Fk7fwMUmWhnbm8tnnWW%2FP5aKhSAox%2BVGuCsa7QuAMrJ9mZGjMFjKLg0j1SHiV0R0yOiR3o9gF0GbNFn1%2FnZC%2BwMjJd13jh3fTOilQb%2FeqtVn5lPU2LRgPp9DEcdDA9h%2F8IAkiUUk0QbyciMgTnX9VeOanYvDrakRTDgs%2FtBIIw1Lt640lUV9mNnKSffUz18Bs8R3Ym8oRy5e5lcn8JpxiWvHGF3v89Fd8MN%2FSZHL1aNjNPeN%2FVdBe00aR%2FZRPcPkr0HMKVdD4oeMgePkBRt8FncI035J5SaXHANVKmiTRUwncbwuwY6pgHz0t1J41CFzusi6ZIRxFjwuRXgRGxkOzqJMR5cOgvoSAjBnHw6jJK4fHBhZsCoRaPKmMwJfF%2FHmH6y%2Fz957WdsJU1fm7HPWyQgUErcmA3txQnn2tI6lWCRRqXWWqrK6okr9G5tF8TtlMM2BZwWTTum7dY2Yo0uhXRZH7we8qaDJPnQXXNcA%2B8DYAVr%2B3BrJ6C2hRr5UdYXRg8OGKUZ43rK8xXQT%2FeS&X-Amz-Signature=16e440537f2ee316432c7362bc5040fd2555468b6f86c2c7edbddf126112b6f3&X-Amz-SignedHeaders=host",
-                                            "contentType": "application/pdf"
-                                        }
-                                    }
-                                ],
-                                "subject": {
+                                "id": "a2fb0434-2444-437c-b308-9e3054a7f9d6",
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
+                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
+                                },
+                                "patient": {
                                     "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
                                 },
-                                "resourceType": "DocumentReference"
+                                "reaction": [
+                                    {
+                                        "onset": "2021-06-28T00:00:00.000Z",
+                                        "substance": {
+                                            "text": "Molds & Smuts",
+                                            "coding": [
+                                                {
+                                                    "code": "235618",
+                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+                                                }
+                                            ]
+                                        },
+                                        "manifestation": [
+                                            {
+                                                "text": "Hives",
+                                                "coding": [
+                                                    {
+                                                        "code": "247472004",
+                                                        "system": "http://snomed.info/sct",
+                                                        "display": "Hives"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "recorder": {
+                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                },
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                    }
+                                ],
+                                "resourceType": "AllergyIntolerance",
+                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
+                                "clinicalStatus": {
+                                    "coding": [
+                                        {
+                                            "code": "active",
+                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "fullUrl": "urn:uuid:55f26d23-c358-4750-8196-ad55b4160d39",
+                            "resource": {
+                                "id": "55f26d23-c358-4750-8196-ad55b4160d39",
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
+                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
+                                },
+                                "patient": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "reaction": [
+                                    {
+                                        "onset": "2021-06-28T00:00:00.000Z",
+                                        "substance": {
+                                            "text": "Nuts",
+                                            "coding": [
+                                                {
+                                                    "code": "235618",
+                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+                                                }
+                                            ]
+                                        },
+                                        "manifestation": [
+                                            {
+                                                "text": "Sneezing",
+                                                "coding": [
+                                                    {
+                                                        "code": "247472004",
+                                                        "system": "http://snomed.info/sct",
+                                                        "display": "Hives"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "recorder": {
+                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                },
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                    }
+                                ],
+                                "resourceType": "AllergyIntolerance",
+                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
+                                "clinicalStatus": {
+                                    "coding": [
+                                        {
+                                            "code": "active",
+                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "fullUrl": "urn:uuid:613b3130-91ee-42df-8cc3-58619cbd4664",
+                            "resource": {
+                                "id": "613b3130-91ee-42df-8cc3-58619cbd4664",
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
+                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
+                                },
+                                "patient": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "reaction": [
+                                    {
+                                        "onset": "2021-06-28T00:00:00.000Z",
+                                        "substance": {
+                                            "text": "Ibuprofen",
+                                            "coding": [
+                                                {
+                                                    "code": "235618",
+                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+                                                }
+                                            ]
+                                        },
+                                        "manifestation": [
+                                            {
+                                                "text": "Sores",
+                                                "coding": [
+                                                    {
+                                                        "code": "247472004",
+                                                        "system": "http://snomed.info/sct",
+                                                        "display": "Sores"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "recorder": {
+                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                },
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                    }
+                                ],
+                                "resourceType": "AllergyIntolerance",
+                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
+                                "clinicalStatus": {
+                                    "coding": [
+                                        {
+                                            "code": "active",
+                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "fullUrl": "urn:uuid:52b8a96a-89ae-4e0b-a61b-4d9163f193f9",
+                            "resource": {
+                                "id": "52b8a96a-89ae-4e0b-a61b-4d9163f193f9",
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
+                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
+                                },
+                                "patient": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "reaction": [
+                                    {
+                                        "onset": "2021-06-28T00:00:00.000Z",
+                                        "substance": {
+                                            "text": "Chlorine",
+                                            "coding": [
+                                                {
+                                                    "code": "235618",
+                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+                                                }
+                                            ]
+                                        },
+                                        "manifestation": [
+                                            {
+                                                "text": "Rash",
+                                                "coding": [
+                                                    {
+                                                        "code": "247472004",
+                                                        "system": "http://snomed.info/sct",
+                                                        "display": "Rash"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "recorder": {
+                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                },
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                    }
+                                ],
+                                "resourceType": "AllergyIntolerance",
+                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
+                                "clinicalStatus": {
+                                    "coding": [
+                                        {
+                                            "code": "active",
+                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                        }
+                                    ]
+                                }
+                            }
+                        },
+                        {
+                            "fullUrl": "urn:uuid:b7ac4f2d-bc89-4de2-ba2f-b23d87249cb4",
+                            "resource": {
+                                "id": "b7ac4f2d-bc89-4de2-ba2f-b23d87249cb4",
+                                "meta": {
+                                    "source": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml",
+                                    "lastUpdated": "2024-09-18T17:36:32.702+00:00"
+                                },
+                                "patient": {
+                                    "reference": "Patient/01943bc1-fd38-7c9c-9947-14f7458a7428"
+                                },
+                                "reaction": [
+                                    {
+                                        "onset": "2021-06-28T00:00:00.000Z",
+                                        "substance": {
+                                            "text": "Dust",
+                                            "coding": [
+                                                {
+                                                    "code": "235618",
+                                                    "system": "http://www.nlm.nih.gov/research/umls/rxnorm"
+                                                }
+                                            ]
+                                        },
+                                        "manifestation": [
+                                            {
+                                                "text": "Hives",
+                                                "coding": [
+                                                    {
+                                                        "code": "247472004",
+                                                        "system": "http://snomed.info/sct",
+                                                        "display": "Hives"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "recorder": {
+                                    "reference": "Practitioner/3ee4062f-eee4-4e73-a03e-a23da82902d8"
+                                },
+                                "extension": [
+                                    {
+                                        "url": "https://public.metriport.com/fhir/StructureDefinition/doc-id-extension.json",
+                                        "valueString": "7a2359de-6416-44a2-ae40-0061efdf5dee/01943bc1-fd38-7c9c-9947-14f7458a7428/7a2359de-6416-44a2-ae40-0061efdf5dee_01943bc1-fd38-7c9c-9947-14f7458a7428_aacad24e-fba3-4cb8-b7e5-2c233fda1d42doc3.xml"
+                                    }
+                                ],
+                                "resourceType": "AllergyIntolerance",
+                                "onsetDateTime": "2021-06-28T00:00:00.000Z",
+                                "clinicalStatus": {
+                                    "coding": [
+                                        {
+                                            "code": "active",
+                                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"
+                                        }
+                                    ]
+                                }
                             }
                         }
                     ],
-                    "total": 1,
+                    "total": 7,
                     "resourceType": "Bundle"
                 },
                 "status": "completed",
                 "filters": {
-                    "dateTo": "",
-                    "dateFrom": "",
+                    "dateTo": "2024-01-01",
+                    "dateFrom": "2021-01-01",
                     "resources": "AllergyIntolerance"
                 },
                 "patientId": "01943bc1-fd38-7c9c-9947-14f7458a7428"
