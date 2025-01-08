@@ -18,22 +18,22 @@ async def save_to_redis(patient_id, webhook_type, data):
         # Combine patient_id and webhook_type to form a unique key
         redis_key = f"patient:{patient_id}:webhook_type:{webhook_type}"
         
-        # Check if data already exists for this patient and webhook_type
-        existing_data = redis_client.get(redis_key)
+        # # Check if data already exists for this patient and webhook_type
+        # existing_data = redis_client.get(redis_key)
 
-        if existing_data:
-            # Append to existing data
-            existing_data = json.loads(existing_data)
-            if isinstance(existing_data, list):
-                existing_data.append(data)
-            else:
-                existing_data = [existing_data, data]
-        else:
-            # Initialize new list for this patient_id and webhook_type
-            existing_data = [data]
+        # if existing_data:
+        #     # Append to existing data
+        #     existing_data = json.loads(existing_data)
+        #     if isinstance(existing_data, list):
+        #         existing_data.append(data)
+        #     else:
+        #         existing_data = [existing_data, data]
+        # else:
+        #     # Initialize new list for this patient_id and webhook_type
+        #     existing_data = [data]
 
         # Save the updated data to Redis
-        redis_client.set(redis_key, json.dumps(existing_data))
+        redis_client.set(redis_key, json.dumps(data))
         logger.info(f"Webhook data saved for patient ID: {patient_id}, webhook type: {webhook_type}")
     except Exception as e:
         logger.error(f"Error saving data to Redis: {e}")
