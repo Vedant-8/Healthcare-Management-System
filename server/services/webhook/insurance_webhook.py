@@ -1,8 +1,3 @@
-import json
-from pathlib import Path
-
-
-                        
 def extract_insurance_info(data):
     insurance_info = []
 
@@ -39,22 +34,3 @@ def extract_insurance_info(data):
                     insurance_info.append(organization_info)
 
     return insurance_info
-
-
-# Input file path
-input_file_path = Path("server/services/webhook/webhook_db.json")  # Assuming this file contains your input JSON data
-output_file_path = Path("server/services/webhook/temp_jsons/insurance.json")
-
-
-with input_file_path.open("r", encoding="utf-8") as f:
-    data = json.load(f)
-
-
-# Extract allergy data and save it as a JSON file
-try:
-    allergy_info = extract_insurance_info(data)
-    with open(output_file_path, "w") as outfile:
-        json.dump(allergy_info, outfile, indent=4)
-    print(f"Insurance data successfully saved to {output_file_path}")
-except Exception as e:
-    print(f"Error: {e}")

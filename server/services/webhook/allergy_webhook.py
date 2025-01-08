@@ -1,6 +1,3 @@
-import json
-from pathlib import Path
-
 def extract_allergy_intolerances(data):
     allergies = []
 
@@ -14,15 +11,27 @@ def extract_allergy_intolerances(data):
                 if resource.get("resourceType") == "AllergyIntolerance":
                     for reaction in resource.get("reaction", []):
                         allergy = {
-                            "Allergy": reaction.get("substance", {}).get("text", "N/A"),
-                            "Manifestation": reaction.get("manifestation", [{}])[0].get("text", "N/A"),
-                            "Status": resource.get("clinicalStatus", {}).get("coding", [{}])[0].get("code", "N/A"),
+                            "Allergy": (reaction.get("substance", {}).get("text", "N/A") 
+                                        if isinstance(reaction.get("substance", {}), dict) 
+                                        else "N/A"),
+                            "Manifestation": (reaction.get("manifestation", [{}])[0].get("text", "N/A") 
+                                              if isinstance(reaction.get("manifestation", [{}])[0], dict) 
+                                              else "N/A"),
+                            "Status": (resource.get("clinicalStatus", {}).get("coding", [{}])[0].get("code", "N/A") 
+                                       if isinstance(resource.get("clinicalStatus", {}).get("coding", [{}])[0], dict) 
+                                       else "N/A"),
                             "Criticality": resource.get("criticality", "N/A"),
                             "Period": reaction.get("onset", "N/A"),
                             "Codes": {
-                                "Text": reaction.get("substance", {}).get("text", "N/A"),
-                                "System": reaction.get("substance", {}).get("coding", [{}])[0].get("system", "N/A"),
-                                "Code": reaction.get("substance", {}).get("coding", [{}])[0].get("code", "N/A"),
+                                "Text": (reaction.get("substance", {}).get("text", "N/A") 
+                                         if isinstance(reaction.get("substance", {}), dict) 
+                                         else "N/A"),
+                                "System": (reaction.get("substance", {}).get("coding", [{}])[0].get("system", "N/A") 
+                                           if isinstance(reaction.get("substance", {}).get("coding", [{}])[0], dict) 
+                                           else "N/A"),
+                                "Code": (reaction.get("substance", {}).get("coding", [{}])[0].get("code", "N/A") 
+                                         if isinstance(reaction.get("substance", {}).get("coding", [{}])[0], dict) 
+                                         else "N/A"),
                             },
                             "References": {
                                 "Performer": resource.get("recorder", {}).get("reference", "N/A"),
@@ -34,20 +43,3 @@ def extract_allergy_intolerances(data):
 
     return allergies
 
-# Input file path
-input_file_path = Path("server/services/webhook/webhook_db.json")  # Assuming this file contains your input JSON data
-output_file_path = Path("server/services/webhook/temp_jsons/allergy.json")
-
-
-with input_file_path.open("r", encoding="utf-8") as f:
-    data = json.load(f)
-
-
-# Extract allergy data and save it as a JSON file
-try:
-    allergy_info = extract_allergy_intolerances(data)
-    with open(output_file_path, "w") as outfile:
-        json.dump(allergy_info, outfile, indent=4)
-    print(f"Allergy data successfully saved to {output_file_path}")
-except Exception as e:
-    print(f"Error: {e}")
