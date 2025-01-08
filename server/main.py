@@ -12,7 +12,6 @@ from routers.FHIR_router import router as FHIR_router
 from services.webhook.webhook import router as webhook_router
 from dependencies.redis.redis_helpers import get_user_data_from_redis
 
-from services.webhook.allergy_webhook import extract_allergy_intolerances
 
 app = FastAPI()
 

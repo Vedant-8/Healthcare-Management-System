@@ -23,7 +23,7 @@ from services.webhook.related_person_webook import extract_related_person_data
 app = APIRouter()
 
 
-logger = logging.getLogger("webhook_logger")
+logger = logging.getLogger("webhook")
 logging.basicConfig(level=logging.INFO)
 router=APIRouter()
 
