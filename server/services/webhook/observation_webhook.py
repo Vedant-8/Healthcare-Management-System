@@ -1,8 +1,3 @@
-import json
-from pathlib import Path
-
-
-
 def extract_observations_lab(data):
     observations = []
 
@@ -35,7 +30,6 @@ def extract_observations_lab(data):
     return observations
 
 
-
 def extract_observations_vitals(data):
     observations = []
 
@@ -66,31 +60,3 @@ def extract_observations_vitals(data):
                         observations.append(observation)
 
     return observations
-
-
-# Input file path
-input_file_path = Path("server/services/webhook/webhook_db.json")  # Assuming this file contains your input JSON data
-output_file_path_vitals = Path("server/services/webhook/temp_jsons/observation_vitals.json")
-output_file_path_lab = Path("server/services/webhook/temp_jsons/observation_lab.json")
-
-with input_file_path.open("r", encoding="utf-8") as f:
-    data = json.load(f)
-
-
-# Extract allergy data and save it as a JSON file
-try:
-    vital_info = extract_observations_vitals(data)
-    with open(output_file_path_vitals, "w") as outfile:
-        json.dump(vital_info, outfile, indent=4)
-    print(f"observation data successfully saved to {output_file_path_vitals}")
-except Exception as e:
-    print(f"Error: {e}")
-
-
-try:
-    lab_info = extract_observations_lab(data)
-    with open(output_file_path_lab, "w") as outfile:
-        json.dump(lab_info, outfile, indent=4)
-    print(f"observation data successfully saved to {output_file_path_lab}")
-except Exception as e:
-    print(f"Error: {e}")

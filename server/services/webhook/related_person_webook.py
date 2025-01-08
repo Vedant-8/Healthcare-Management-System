@@ -1,8 +1,3 @@
-
-import json
-from pathlib import Path
-
-
 def extract_related_person_data(data):
     related_persons = []
 
@@ -56,17 +51,3 @@ def extract_related_person_data(data):
 
     return related_persons
 
-
-
-input_file_path = Path("server/services/webhook/webhook_db.json")  # Assuming this file contains your input JSON data
-output_file_path = Path("server/services/webhook/temp_jsons/related_person.json")
-with input_file_path.open("r", encoding="utf-8") as f:
-    data = json.load(f)
-
-try:
-    related_person = extract_related_person_data(data)
-    with open(output_file_path, "w") as outfile:
-        json.dump(related_person, outfile, indent=4)
-    print(f"related_person data successfully saved to {output_file_path}")
-except Exception as e:
-    print(f"Error: {e}")

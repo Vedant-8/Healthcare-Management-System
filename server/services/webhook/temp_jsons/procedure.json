@@ -8,11 +8,7 @@
                 "Name": "David K Smith MD",
                 "Role": "Attending physician"
             }
-        ],
-        "Location": "N/A",
-        "Reason": [],
-        "Outcome": "N/A",
-        "Note": []
+        ]
     },
     {
         "Procedure": "BASIC METABOLIC PANEL",
@@ -23,11 +19,7 @@
                 "Name": "David K Smith MD",
                 "Role": "Attending physician"
             }
-        ],
-        "Location": "N/A",
-        "Reason": [],
-        "Outcome": "N/A",
-        "Note": []
+        ]
     },
     {
         "Procedure": "FUNGAL CULTURE, NON-BLOOD",
@@ -38,11 +30,7 @@
                 "Name": "David K Smith MD",
                 "Role": "Attending physician"
             }
-        ],
-        "Location": "N/A",
-        "Reason": [],
-        "Outcome": "N/A",
-        "Note": []
+        ]
     },
     {
         "Procedure": "STERILE BODY FLUID CULTURE, AEROBIC",
@@ -53,11 +41,7 @@
                 "Name": "David K Smith MD",
                 "Role": "Attending physician"
             }
-        ],
-        "Location": "N/A",
-        "Reason": [],
-        "Outcome": "N/A",
-        "Note": []
+        ]
     },
     {
         "Procedure": "ESTIMATED GLOMERULAR FILTRATION RATE",
@@ -68,11 +52,18 @@
                 "Name": "David K Smith MD",
                 "Role": "Attending physician"
             }
-        ],
-        "Location": "N/A",
-        "Reason": [],
-        "Outcome": "N/A",
-        "Note": []
+        ]
+    },
+    {
+        "Procedure": "X-RAY SHOULDER 2+ VW - XR SHOULDER 2+ VIEWS",
+        "Status": "completed",
+        "Performed": "2016-05-17T21:13:42.000Z",
+        "Performer": [
+            {
+                "Name": "David K Smith MD",
+                "Role": "Internal Medicine"
+            }
+        ]
     },
     {
         "Procedure": "HC MAGNESIUM - MAGNESIUM",
@@ -83,11 +74,7 @@
                 "Name": "David K Smith MD",
                 "Role": "Internal Medicine"
             }
-        ],
-        "Location": "N/A",
-        "Reason": [],
-        "Outcome": "N/A",
-        "Note": []
+        ]
     },
     {
         "Procedure": "HC 12 LEAD EKG; TRACING ONLY - ECG 12-LEAD",
@@ -98,10 +85,6 @@
                 "Name": "David K Smith MD",
                 "Role": "Internal Medicine"
             }
-        ],
-        "Location": "N/A",
-        "Reason": [],
-        "Outcome": "N/A",
-        "Note": []
+        ]
     }
 ]

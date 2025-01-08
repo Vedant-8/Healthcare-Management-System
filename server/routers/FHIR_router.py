@@ -1,4 +1,4 @@
-from fastapi import APIRouter,HTTPException
+from fastapi import APIRouter,HTTPException, Request
 import os
 import requests
 import json
@@ -13,7 +13,9 @@ router= APIRouter()
 
 #gets all data of the patient to our custom webhook
 @router.post('/fhir/consolidated_query')
-def StartConsolidatedDataQuery(id: str,
+async def StartConsolidatedDataQuery(
+    request:Request,
+    id: str,
     dateFrom: Optional[str] = None ,
     dateTo: Optional[str] = None ,
     conversionType: Optional[str] = None,
@@ -21,10 +23,11 @@ def StartConsolidatedDataQuery(id: str,
 ):
     url = f"https://api.sandbox.metriport.com/medical/v1/patient/{id}/consolidated/query"
     
-    # Build the payload dynamically
+    # Build the query dynamically
     query = {}
-    payload = {"metadata": {}}
     
+    payload = await request.json()
+
     if resources:
         query["resources"] = resources
             
@@ -35,7 +38,7 @@ def StartConsolidatedDataQuery(id: str,
     if conversionType:
         query["conversionType"] = conversionType
         
-
+    
     headers = {
         "x-api-key": x_api_key,
         "Content-Type": "application/json"
@@ -55,6 +58,7 @@ def StartConsolidatedDataQuery(id: str,
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {e}")
+
 
 
 
@@ -116,8 +120,10 @@ def CountPatientData(patientId:str):
 
 
 #to be aded code for later
-@router.post('/fhir/getMedicalHistroy')
-def GetMedicalHistoryData(id: str,
+@router.post('/GetMedicalRecordSummary')
+async def GetMedicalHistoryData(
+    request:Request,
+    id: str,
     dateFrom: Optional[str] = None ,
     dateTo: Optional[str] = None ,
     conversionType: Optional[str] = "pdf",
@@ -125,10 +131,11 @@ def GetMedicalHistoryData(id: str,
 ):
     url = f"https://api.sandbox.metriport.com/medical/v1/patient/{id}/consolidated/query"
     
-    # Build the payload dynamically
+    # Build the query dynamically
     query = {}
-    payload = {"metadata": {}}
     
+    payload = await request.json()
+
     if resources:
         query["resources"] = resources
             
@@ -139,7 +146,7 @@ def GetMedicalHistoryData(id: str,
     if conversionType:
         query["conversionType"] = conversionType
         
-
+    
     headers = {
         "x-api-key": x_api_key,
         "Content-Type": "application/json"
