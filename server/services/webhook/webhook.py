@@ -38,6 +38,10 @@ async def webhook(request: Request):
     try:
         # Log the request for debugging
         body = await request.json()
+        
+        if not body.get("meta",{}).get("data",{}).get("type",None): 
+            return {"status": "success", "message": "Webhook processed successfully"}
+        
         logger.info(f"Webhook received at {dt.datetime.now()}")
         #await append_to_json_file(body)
         
@@ -114,8 +118,7 @@ async def webhook(request: Request):
             cleaned_data=extract_related_person_data([body])
             #print(cleaned_data)
             await save_to_redis(patient_id=patient_id, webhook_type=webhook_type ,data=cleaned_data)
-        
-        
+            
         # Check for a "ping" message
         if body.get("ping"):
             return {"status": "success", "message": "Ping received", "ping": body["ping"]}

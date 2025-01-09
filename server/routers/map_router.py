@@ -6,7 +6,7 @@ from fastapi.responses import HTMLResponse
 import os
 
 router= APIRouter()
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="/home/omkar/Documents/MedEase/templates")
 mapbox_token=os.environ["mapbox_access_token"]
 
 @router.get("/nearby_hospitals")
