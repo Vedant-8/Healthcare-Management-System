@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 from sqlalchemy import (
     Column,
     Integer,
@@ -74,4 +72,3 @@ class Appointment(BaseModel):
     status: Optional[str] = Field("scheduled", description="Status of the appointment")
     insurance_provider: Optional[str] = Field(None, description="Insurance provider, if any")
     insurance_id: Optional[str] = Field(None, description="Insurance ID, if any")
->>>>>>> main
