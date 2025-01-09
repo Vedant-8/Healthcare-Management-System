@@ -1,42 +1,142 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* app.css */
+
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(135deg, #FF7F7F, #FFB6C1); /* Red gradient */
+  padding: 10px 0;
+}
+
+.navbar a {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  font-weight: bold;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #FFC0CB;
+}
+
+/* Card Component Styling */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styling */
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Specific Button Colors */
+button.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+button.bg-blue-500:hover {
+  background-color: #2563eb;
+}
+
+button.bg-purple-500 {
+  background-color: #9b4dca;
+}
+
+button.bg-purple-500:hover {
+  background-color: #7c3aed;
+}
+
+button.bg-pink-500 {
+  background-color: #ec4899;
+}
+
+button.bg-pink-500:hover {
+  background-color: #db2777;
+}
+
+button.bg-green-500 {
+  background-color: #10b981;
+}
+
+button.bg-green-500:hover {
+  background-color: #059669;
+}
+
+/* Section Styling */
+.section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.section-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125rem;
+  color: #555;
+}
+
+/* Footer Styling */
+.footer {
+  background: linear-gradient(135deg, #9b4dca, #ff7f7f);
+  padding: 20px 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.footer p {
+  color: white;
+  font-size: 0.875rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.footer p a {
+  color: #FFC0CB;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.footer p a:hover {
+  text-decoration: underline;
 }
 
-.card {
-  padding: 2em;
+/* Sidebar Styling */
+.sidebar {
+  background-color: #FFB6C1; /* Light Red background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.read-the-docs {
-  color: #888;
+.sidebar h3 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.sidebar button {
+  margin-bottom: 10px;
+  background-color: #FF7F7F;
+  color: white;
+}
+
+.sidebar button:hover {
+  background-color: #FF4D4D;
 }
