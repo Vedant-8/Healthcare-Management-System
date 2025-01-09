@@ -1,0 +1,10 @@
+{{url}}/api/create_appointment?patient_id=01943bc1-fd38-7c9c-9947-14f7458a7428&hospital_id=0194370c-bdfc-7b80-84d7-d75fcfc566db&appointment_date=12-01-2025&appointment_time=12:30&reason=regular checkup&insurance_provider=SIGMA MEDICARE, INC&insurance_id=65772b28-ff79-4fd0-beb9-190f5d9ff016
+
+
+{{url}}/api/appointment?appointment_id=7
+
+
+{{url}}/api/patients/appointments?patient_id=01943bc1-fd38-7c9c-9947-14f7458a7428
+
+
+{{url}}/api/facility/appointments?hospital_id=0194370c-bdfc-7b80-84d7-d75fcfc566db
