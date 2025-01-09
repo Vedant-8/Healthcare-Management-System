@@ -2,45 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global Reset for Better Styling Consistency */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #f9fafe;
-  color: #333333;
+/* Background Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(90deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
+    background-position: 0% 50%;
+  }
+  50% {
+    background: linear-gradient(90deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
+    background-position: 100% 50%;
+  }
+  100% {
+    background: linear-gradient(90deg, #ffb6c1 0%, #ffffff 50%, #ffb6c1 100%);
+    background-position: 0% 50%;
+  }
 }
 
-/* Smooth scrolling for modern aesthetics */
-html {
-  scroll-behavior: smooth;
+.animate-gradient-bg {
+  animation: gradientAnimation 10s ease infinite; /* Continuous smooth transition */
+  background-size: 200% 100%; /* Stretch the gradient for smooth flow */
 }
 
-/* Custom scrollbar for better aesthetics */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #b3c4ff, #f3d9fa);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #91a8f4, #e5b6f8);
-}
-
-/* Animations for subtle transitions */
-@keyframes fadeIn {
-  from {
+/* Random "+" Sign Animations (Random moving and fading) */
+@keyframes fadeAndMove {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate(-50%, -50%) scale(0.5);
   }
-  to {
+  50% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(20px, 20px) scale(1.5);
   }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
+/* Adding random positions and animations */
+.plus-sign1 {
+  top: 10%;
+  left: 15%;
+  font-size: 5rem;
+  color: red;
+  animation: fadeAndMove 5s infinite;
+}
+
+.plus-sign2 {
+  top: 30%;
+  left: 70%;
+  font-size: 4rem;
+  color: red;
+  animation: fadeAndMove 6s infinite;
+  animation-delay: 1s;
+}
+
+.plus-sign3 {
+  top: 60%;
+  left: 25%;
+  font-size: 4.5rem;
+  color: red;
+  animation: fadeAndMove 7s infinite;
+  animation-delay: 2s;
+}
+
+.plus-sign4 {
+  top: 50%;
+  left: 80%;
+  font-size: 5.5rem;
+  color: red;
+  animation: fadeAndMove 6s infinite;
+  animation-delay: 1.5s;
+}
+
+.plus-sign5 {
+  top: 75%;
+  left: 60%;
+  font-size: 4.2rem;
+  color: red;
+  animation: fadeAndMove 8s infinite;
+  animation-delay: 3s;
 }

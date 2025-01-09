@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import LandingPage from "./pages/LandingPage";
-import PatientForm from "./forms/PatientForm";
-import DoctorForm from "./forms/DoctorForm";
-import AppointmentForm from "./forms/AppointmentForm";
+import Dashboard from "./pages/Dashboard";
+import Maps from "./pages/Maps";
+import Directions from "./components/Directions";
+
 
 export default function App() {
   return (
@@ -16,10 +17,9 @@ export default function App() {
       {/* For signed-in users, show authenticated content with routes */}
       <SignedIn>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/patient-form" element={<PatientForm />} />
-            <Route path="/doctor-form" element={<DoctorForm />} />
-            <Route path="/appointment-form" element={<AppointmentForm />} />
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/nearby-hospitals" element={<Maps />} />
+            <Route path="/directions" element={<Directions />} />
           </Routes>
       </SignedIn>
     </Router>
