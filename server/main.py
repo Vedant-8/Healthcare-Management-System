@@ -10,6 +10,8 @@ from routers.patient_router import router as patient_router
 from routers.document_router import router as document_router
 from routers.FHIR_router import router as FHIR_router
 from services.webhook.webhook import router as webhook_router
+from routers.appointment_router import router as appointment_router
+
 from dependencies.redis.redis_helpers import get_user_data_from_redis
 
 
@@ -36,6 +38,8 @@ app.include_router(patient_router, prefix="/api")
 app.include_router(document_router, prefix="/api")
 app.include_router(webhook_router, prefix="/api")
 app.include_router(FHIR_router, prefix="/api")
+app.include_router(appointment_router, prefix="/api")
+
 
 @app.get("/")
 def root():

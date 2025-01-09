@@ -1,0 +1,52 @@
+{
+    "hospital_id": "12345",
+    "hospital_name": "City General Hospital",
+    "patient_data": [
+      {
+        "id": "01943bc1-fd38-7c9c-9947-14f7458a7428",
+        "eTag": "fbbe0348c6535a13dec910d59850d591",
+        "facilityIds": [
+          "0194370c-bdfc-7b80-84d7-d75fcfc566db"
+        ],
+        "externalId": null,
+        "dateCreated": "2025-01-06T13:15:56.601Z",
+        "firstName": "Andreas",
+        "lastName": "Sims",
+        "dob": "1952-01-01",
+        "genderAtBirth": "M",
+        "address": [
+          {
+            "zip": "64000",
+            "city": "Jefferson City",
+            "state": "MO",
+            "country": "USA",
+            "addressLine1": "4430 York St"
+          }
+        ]
+      },
+      {
+        "id": "02764ac2-bf61-4a8c-8b7e-256a8b8c4444",
+        "eTag": "ecbe1456d9873a23acd910e59760d701",
+        "facilityIds": [
+          "0194370c-bdfc-7b80-84d7-d75fcfc566db"
+        ],
+        "externalId": null,
+        "dateCreated": "2025-02-10T15:45:30.123Z",
+        "firstName": "Sarah",
+        "lastName": "Johnson",
+        "dob": "1975-05-12",
+        "genderAtBirth": "F",
+        "address": [
+          {
+            "zip": "64001",
+            "city": "Jefferson City",
+            "state": "MO",
+            "country": "USA",
+            "addressLine1": "2345 Green St"
+          }
+        ]
+      }
+    ],
+    "last_updated": "2025-09-01T10:00:00Z"
+  }
+  

@@ -1,0 +1,54 @@
+[
+    {
+        "id": 3,
+        "patient_id": "01943bc1-fd38-7c9c-9947-14f7458a7428",
+        "hospital_id": "0194370c-bdfc-7b80-84d7-d75fcfc566db",
+        "appointment_date": "2025-01-13",
+        "appointment_time": "18:30:00",
+        "reason": "regular checkup",
+        "status": "scheduled",
+        "insurance_provider": "SIGMA MEDICARE, INC",
+        "insurance_id": "65772b28-ff79-4fd0-beb9-190f5d9ff016",
+        "created_at": "2025-01-09T23:44:41.258166",
+        "updated_at": "2025-01-09T23:44:41.258166"
+    },
+    {
+        "id": 4,
+        "patient_id": "01943bc1-fd38-7c9c-9947-14f7458a7428",
+        "hospital_id": "0194370c-bdfc-7b80-84d7-d75fcfc566db",
+        "appointment_date": "2025-01-15",
+        "appointment_time": "10:30:00",
+        "reason": "regular checkup",
+        "status": "scheduled",
+        "insurance_provider": "SIGMA MEDICARE, INC",
+        "insurance_id": "65772b28-ff79-4fd0-beb9-190f5d9ff016",
+        "created_at": "2025-01-09T23:45:07.631687",
+        "updated_at": "2025-01-09T23:45:07.631687"
+    },
+    {
+        "id": 5,
+        "patient_id": "01943bc1-fd38-7c9c-9947-14f7458a7428",
+        "hospital_id": "0194370c-bdfc-7b80-84d7-d75fcfc566db",
+        "appointment_date": "2025-01-17",
+        "appointment_time": "10:30:00",
+        "reason": "regular checkup",
+        "status": "scheduled",
+        "insurance_provider": "SIGMA MEDICARE, INC",
+        "insurance_id": "65772b28-ff79-4fd0-beb9-190f5d9ff016",
+        "created_at": "2025-01-10T00:02:29.922193",
+        "updated_at": "2025-01-10T00:02:29.922193"
+    },
+    {
+        "id": 6,
+        "patient_id": "01943718-7c77-74ee-a694-2a405d8d460e",
+        "hospital_id": "0194370c-bdfc-7b80-84d7-d75fcfc566db",
+        "appointment_date": "2025-01-22",
+        "appointment_time": "10:30:00",
+        "reason": "regular checkup",
+        "status": "scheduled",
+        "insurance_provider": "SIGMA MEDICARE, INC",
+        "insurance_id": "65772b28-ff79-4fd0-beb9-190f5d9ff016",
+        "created_at": "2025-01-10T00:30:34.910716",
+        "updated_at": "2025-01-10T00:30:34.910716"
+    }
+]
