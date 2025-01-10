@@ -12,7 +12,6 @@ import Procedures from "../components/PatientData/Procedures"; // Import the Pro
 import Relatives from "../components/PatientData/Relatives"; // Import the Relatives component
 import Observations from "../components/PatientData/Observations"; // Import the Observations component
 import { Typography, Button, Card } from "@mui/material";
-import { Person } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
@@ -58,112 +57,51 @@ const Dashboard: React.FC = () => {
       <Navbar />
 
       {/* Dashboard Content */}
-      <main className="flex flex-1">
+      <main className="flex flex-1 bg-white">
         {/* Sidebar */}
-        <div className="w-1/4 bg-[#ffebee] py-8 px-4 shadow-lg">
-          <div className="flex items-center mb-8">
-            <Person className="text-red-600 mr-2" />
-            <Typography variant="h6" className="font-bold text-gray-800">
-              User Profile
-            </Typography>
-          </div>
-
-          {/* Patient Component */}
-          <div className="mt-4">
-            <Patient />
-          </div>
-
-          {/* Nearby Hospitals Button */}
-          <div className="mt-8">
-            <Button
-              variant="contained"
-              color="error"
-              onClick={handleNavigateToHospitals}
-              className="w-full rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              Search Nearby Hospitals
-            </Button>
-          </div>
+        <div className="w-1/5 py-8 px-4 shadow-lg">
+          <Patient />
         </div>
 
         {/* Main Content (Right Side) */}
-        <div className="w-3/4 py-8 px-12 flex flex-col items-center bg-[#ffebee]">
-          {/* Header */}
-
+        <div className="w-4/5 py-8 px-12 flex flex-col items-center">
           {/* Buttons to render components */}
           <div className="mb-8 flex flex-wrap justify-start gap-4">
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Allergy")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            {/* Search Nearby Hospitals Button */}
+
+            <button
+              onClick={handleNavigateToHospitals}
+              className="py-2 px-4 text-sm font-medium rounded-lg transition-all duration-300 ease-in-out bg-white text-gray-500 hover:bg-red-600 hover:text-white"
             >
-              View Allergies
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Condition")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Conditions
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Insurance")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Insurance
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Immunization")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Immunization
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Medications")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Medications
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Practitioner")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Practitioners
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Procedures")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Procedures
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Relatives")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Relatives
-            </Button>
-            <Button
-              variant="contained"
-              color="error"
-              onClick={() => setActiveComponent("Observations")}
-              className="w-1/4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            >
-              View Observations
-            </Button>
+              Search Nearby Hospitals
+            </button>
+
+            <div className="flex mb-8 space-x-4 bg-slate-10 py-2 rounded-md shadow-md">
+              {[
+                "Allergy",
+                "Condition",
+                "Insurance",
+                "Immunization",
+                "Medications",
+                "Practitioner",
+                "Procedures",
+                "Relatives",
+                "Observations",
+              ].map((component) => (
+                <button
+                  key={component}
+                  onClick={() => setActiveComponent(component)}
+                  className={`py-2 px-4 text-sm font-medium rounded-lg transition-all duration-300
+                  ${
+                    activeComponent === component
+                      ? "bg-red-100 text-red-600 shadow-md border border-red-300"
+                      : "text-gray-500 hover:text-gray-700"
+                  }`}
+                >
+                  {component}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Render the active component */}

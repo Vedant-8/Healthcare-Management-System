@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
           onClick={() => handleNavigation("/")}
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
-          HealthCare
+          MedEase
         </h1>
         <nav className="flex items-center space-x-4">
           {/* Links visible only when the user is signed out */}

@@ -16,7 +16,7 @@ const LandingPage: React.FC = () => {
             variant="h2"
             className="font-extrabold text-5xl text-red-600"
           >
-            Welcome to HealthCare
+            Welcome to MedEase
           </Typography>
           <Typography variant="body1" className="mt-4 text-lg text-red-600">
             Your one-stop solution for managing your health and well-being with
@@ -35,11 +35,11 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Section 2: Key Features */}
-      <section className="py-16 bg-[#ffaab7] flex justify-center items-center min-h-screen">
+      <section className="py-16 bg-[#fffdfd] flex justify-center items-center min-h-screen">
         <div className="text-center max-w-6xl w-full">
           <Typography
             variant="h4"
-            className="font-bold text-3xl text-white mb-12"
+            className="font-bold text-3xl text-red-500 mb-12"
           >
             Key Features
           </Typography>

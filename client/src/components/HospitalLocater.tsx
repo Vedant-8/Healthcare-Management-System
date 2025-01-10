@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Button, Typography, Card } from "@mui/material";
-import { useNavigate } from "react-router-dom";  // Import the useNavigate hook
+import { Button, Typography, Card, Drawer, Box } from "@mui/material";
 import { getNearbyHospitals } from "../api/nearbyHospitalsApi";
+import AppointmentForm from "../forms/AppointmentForm"; // Import the AppointmentForm component
 
 interface HospitalData {
   fsq_id: string;
@@ -30,17 +30,15 @@ interface HospitalLocaterProps {
 const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, radius }) => {
   const [hospitals, setHospitals] = useState<HospitalData[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const navigate = useNavigate();  // Declare navigate function
+  const [drawerOpen, setDrawerOpen] = useState(false); // State to control the Drawer
+  const [selectedHospital, setSelectedHospital] = useState<HospitalData | null>(null); // Store selected hospital details
 
   useEffect(() => {
     const fetchNearbyHospitals = async () => {
       try {
-        console.debug(`[HospitalLocater] Fetching nearby hospitals`);
         const hospitalData = await getNearbyHospitals(latitude, longitude, radius);
-        console.debug(`[HospitalLocater] Received hospital data:`, hospitalData);
         setHospitals(hospitalData);
       } catch (err) {
-        console.error(`[HospitalLocater] Error occurred:`, err);
         setError("Failed to fetch nearby hospitals");
       }
     };
@@ -48,21 +46,20 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, 
     fetchNearbyHospitals();
   }, [latitude, longitude, radius]);
 
-  // Function to handle directions button click and navigate to the directions page
-  const handleDirectionsClick = (hospital: HospitalData) => {
-    navigate("/directions", {
-      state: {
-        originLat: latitude,
-        originLon: longitude,
-        destLat: hospital.latitude,
-        destLon: hospital.longitude,
-      },
-    });
+  // Open Drawer with selected hospital details
+  const handleScheduleClick = (hospital: HospitalData) => {
+    setSelectedHospital(hospital);
+    setDrawerOpen(true);
+  };
+
+  // Close the Drawer
+  const handleDrawerClose = () => {
+    setDrawerOpen(false);
+    setSelectedHospital(null);
   };
 
   return (
     <div className="flex flex-col items-center">
-
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       {hospitals ? (
@@ -71,7 +68,7 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, 
             <Card
               key={index}
               elevation={6}
-              className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col"
+              className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg flex flex-col"
             >
               {/* Hospital Name centered */}
               <Typography variant="h6" className="font-bold mb-4 text-center text-gray-800">
@@ -100,21 +97,45 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, 
                 </Typography>
               </div>
 
-              {/* Directions Button */}
-              <Button
-                variant="contained"
-                color="error"  // Red button
-                onClick={() => handleDirectionsClick(hospital)}  // Call the navigation function
-                className="mt-auto w-full"
-              >
-                Directions
-              </Button>
+              {/* Buttons */}
+              <Box display="flex" gap={2} mt={2}>
+                <Button
+                  variant="contained"
+                  color="error"
+                  onClick={() => console.log('Navigate to directions')}
+                  className="flex-grow"
+                >
+                  Directions
+                </Button>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={() => handleScheduleClick(hospital)}
+                  className="flex-grow"
+                >
+                  Schedule Appointment
+                </Button>
+              </Box>
             </Card>
           ))}
         </div>
       ) : (
         <p>Loading...</p>
       )}
+
+      {/* MUI Drawer for Appointment Form */}
+      <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerClose}>
+        <Box width={400} p={3}>
+          {selectedHospital && (
+            <>
+              <Typography variant="h6" className="mb-4 text-gray-800">
+                Schedule Appointment for {selectedHospital.name}
+              </Typography>
+              <AppointmentForm />
+            </>
+          )}
+        </Box>
+      </Drawer>
     </div>
   );
 };

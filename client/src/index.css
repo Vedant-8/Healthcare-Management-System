@@ -83,3 +83,61 @@
   animation: fadeAndMove 8s infinite;
   animation-delay: 3s;
 }
+
+/* app.css */
+
+/* Button Styling */
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button Hover Effect */
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Animated Border Styling */
+button.animate-border-moving {
+  position: relative;
+  z-index: 0;
+  border: 2px solid transparent; /* Transparent border for the animation */
+}
+
+button.animate-border-moving::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #FF7F7F, #FFB6C1);
+  z-index: -1;
+  animation: borderMove 3s infinite linear;
+  border-radius: 8px;
+}
+
+@keyframes borderMove {
+  0% {
+    transform: translateX(-100%) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-100%) rotate(90deg);
+  }
+  50% {
+    transform: translateX(100%) rotate(180deg);
+  }
+  75% {
+    transform: translateY(100%) rotate(270deg);
+  }
+  100% {
+    transform: translateX(-100%) rotate(360deg);
+  }
+}
+
