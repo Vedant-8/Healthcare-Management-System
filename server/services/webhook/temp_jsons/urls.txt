@@ -8,3 +8,20 @@
 
 
 {{url}}/api/facility/appointments?hospital_id=0194370c-bdfc-7b80-84d7-d75fcfc566db
+
+
+
+appointments proper-> crud proper 
+upload doc url
+doc list cleaning
+doc dashboard url list api
+
+fit_data api
+nurution api
+send alert to take presecritoions
+daily quotes
+llm for mental health and nurution
+
+find doctors---> cancelled
+find pharmacy
+
