@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
-from services.map.Foursquare import GetPlacesUsingSquare, HospitalJsonToCSV, Get_5_hospitals
+from fastapi import APIRouter, Depends, HTTPException
+from services.map.Foursquare import GetPlacesUsingSquare, Get_5_hospitals
 from fastapi.templating import Jinja2Templates
 from fastapi.requests import Request
 from fastapi.responses import HTMLResponse
@@ -27,6 +27,28 @@ def GetNearbyHospitals(radius,Latitude,Longitude):
     except Exception as e:
         # Handle unexpected errors
         raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {str(e)}")
+
+
+
+@router.get("/nearby_pharmacy")
+def GetNearbyHospitals(radius,Latitude,Longitude):
+    query="pharmacy"
+    try:
+        pharmacy_json=GetPlacesUsingSquare(query,radius,Latitude,Longitude)
+        if not pharmacy_json:
+            raise HTTPException(status_code=404, detail="No hospitals found")
+        
+        pharmacy_data=Get_5_hospitals(pharmacy_json)
+        return {"top_5_pharmacs": pharmacy_data}
+        
+    except HTTPException as http_error:
+        # Raise HTTP exceptions for client-side errors (like 404)
+        raise http_error
+    
+    except Exception as e:
+        # Handle unexpected errors
+        raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {str(e)}")
+
 
 
 @router.get("/directions", response_class=HTMLResponse)
