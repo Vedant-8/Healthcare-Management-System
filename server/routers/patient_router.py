@@ -5,7 +5,6 @@ import json
 from pydantic import BaseModel
 from typing import List
 
-
 x_api_key=os.environ["metri_port_api_key"]
 router= APIRouter()
 
@@ -153,3 +152,47 @@ def get_patient(id: str):
     except Exception as e:
         # Catch any other exceptions
         return {"error": f"An unexpected error occurred: {e}"}
+
+
+
+
+@router.get('/googlefit_data')
+def send_google_fit_data_monthwise(month:int):
+    month_map = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December"
+    }
+
+    # Validate month
+    if month < 1 or month > 12:
+        raise ValueError("Month must be between 1 and 12.")
+
+    # Get the correct month name
+    month_name = month_map[month]
+    
+    # Define the path to the JSON file
+    loc = f"/home/omkar/Documents/MedEase/server/fit_data/summary_reports/sumary_2024/{month}_{month_name}_google_fit.json"
+
+    try:
+        # Open and load the JSON data from the file
+        with open(loc, 'r') as file:
+            data = json.load(file)
+    
+        return data  # Return the loaded JSON data as it is, or modify as needed
+
+    except FileNotFoundError:
+        print(f"data not found")
+        return []
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        return []
