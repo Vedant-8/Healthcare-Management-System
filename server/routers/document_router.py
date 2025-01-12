@@ -2,7 +2,7 @@ from fastapi import APIRouter,HTTPException
 import os
 import requests
 import json
-
+from typing import Optional
 
 x_api_key=os.environ["metri_port_api_key"]
 facilityId="0194370c-bdfc-7b80-84d7-d75fcfc566db"
@@ -144,11 +144,12 @@ def GetFormattedDocumentJson(response:json):
         documents_list.append(document)
     
     
-    return {"doc":documents_list}
+    return {"documents": get_doc_url_list({"doc":documents_list})}
+
 
 #conversionType should only be used for converting XML/CDA files otherwise leave it blank. can convert to html or pdf only.
 @router.get('/getDocumentURL')
-def getDocumentURL(fileName:str, conversionType:str):
+def getDocumentURL(fileName:str, conversionType:Optional[str]=None):
     url = "https://api.sandbox.metriport.com/medical/v1/document/download-url"    
     
     headers = {
@@ -244,3 +245,26 @@ def GETuploadDocURL(patientId:str):
 # @router.put('/uploadDocToFHIR')
 # def uploadDocToFHIR():
 #     pass
+
+
+def get_doc_url_list(data):
+    try:
+        extracted_data = []
+        
+        # Access the list of documents from the 'doc' key
+        documents = data.get("doc", [])
+        
+        for item in documents:
+            attachment = item.get("attachment", {})  # Safely get attachment dictionary
+            extracted_data.append({
+                "title": attachment.get("title", "N/A"),  # Safe access with a default if title is not present
+                "description": item.get("description"),
+                #"url": attachment.get("url"),
+                "size": attachment.get("size"),
+                "creation": attachment.get("creation")
+            })
+        
+        return extracted_data
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {e}")
