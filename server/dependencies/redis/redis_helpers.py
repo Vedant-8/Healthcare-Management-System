@@ -39,7 +39,7 @@ async def save_to_redis(patient_id, webhook_type, data):
         logger.error(f"Error saving data to Redis: {e}")
         raise
 
-def get_user_data_from_redis(patient_id: str, webhook_type: str):
+async def get_user_data_from_redis(patient_id: str, webhook_type: str):
     """
     Retrieve specific JSON data for a patient ID and webhook type from Redis.
 
@@ -84,6 +84,6 @@ def clear_all_redis_data():
     except Exception as e:
         logger.error(f"Error clearing data from Redis: {e}")
         raise
-
-
-# clear_all_redis_data()
+    
+    
+#clear_all_redis_data()
