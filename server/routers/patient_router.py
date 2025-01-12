@@ -4,6 +4,8 @@ import requests
 import json
 from pydantic import BaseModel
 from typing import List
+from datetime import datetime
+from dependencies.celery.config_celery import schedule_sms_reminders
 
 x_api_key=os.environ["metri_port_api_key"]
 router= APIRouter()
@@ -29,6 +31,7 @@ class PatientPayload(BaseModel):
 # class facilityId(BaseModel):
 #     facilityId: str
 
+    
 
 #creates a patient on Metripoint dashboard
 @router.post('/createPatient')
@@ -196,3 +199,37 @@ def send_google_fit_data_monthwise(month:int):
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         return []
+
+
+
+
+
+@router.post('/set_medication_reminders')
+async def set_medication_remainder(request:Request, phone_number:str):
+    try:
+        data= await request.json()
+        medicineData = data.get("medicineData")
+        
+        # Validate date format
+        start_date = datetime.strptime(medicineData['startDate'], "%Y-%m-%d")
+        end_date = datetime.strptime(medicineData['endDate'], "%Y-%m-%d")
+        
+        if start_date > end_date:
+            raise HTTPException(status_code=400, detail="Start date cannot be later than end date.")
+
+        # Schedule the Celery task
+        result = schedule_sms_reminders.apply_async(
+            (medicineData, phone_number)
+        )
+
+        return {
+            "status": "success",
+            "message": "Medication reminders scheduled successfully!",
+            "task_id": result.id  # Return Celery task ID for tracking
+        }
+    except KeyError as e:
+        raise HTTPException(status_code=400, detail=f"Missing key in medicineData: {str(e)}")
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=f"Invalid date format: {str(e)}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
