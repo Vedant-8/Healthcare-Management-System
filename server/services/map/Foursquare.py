@@ -22,7 +22,7 @@ def GetPlacesUsingSquare(query:str, radius:int, Latitude: str, Longitude:str)->j
         "query":query,
         "ll": f"{Latitude},{Longitude}",
         "radius": radius,
-        "categories": hospital_category_code,  # Replace with your category code
+        # "categories": hospital_category_code,  # Replace with your category code
     }
     
     # Send the GET request

@@ -20,13 +20,15 @@ async def StartConsolidatedDataQuery(
     dateTo: Optional[str] = None ,
     conversionType: Optional[str] = None,
     resources: Optional[str] = None,
+    payload: Optional[dict]=None,
 ):
     url = f"https://api.sandbox.metriport.com/medical/v1/patient/{id}/consolidated/query"
     
     # Build the query dynamically
     query = {}
-    
-    payload = await request.json()
+    if payload==None:
+        payload = await request.json()
+        
 
     if resources:
         query["resources"] = resources
@@ -58,10 +60,6 @@ async def StartConsolidatedDataQuery(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {e}")
-
-
-
-
 
 
 
@@ -128,13 +126,14 @@ async def GetMedicalHistoryData(
     dateTo: Optional[str] = None ,
     conversionType: Optional[str] = "pdf",
     resources: Optional[str] = None,
+    payload: Optional[dict]=None,
 ):
     url = f"https://api.sandbox.metriport.com/medical/v1/patient/{id}/consolidated/query"
     
     # Build the query dynamically
     query = {}
     
-    payload = await request.json()
+    if payload==None: payload = await request.json()
 
     if resources:
         query["resources"] = resources

@@ -95,11 +95,11 @@ async def webhook(request: Request):
             cleaned_data_vitals=extract_observations_vitals([body])
             #print(cleaned_data)
             
+            #print(cleaned_data_lab)
             await save_to_redis(patient_id=patient_id, webhook_type="lab" ,data=cleaned_data_lab)
             await save_to_redis(patient_id=patient_id, webhook_type="vitals" ,data=cleaned_data_vitals)
         
-        
-        
+
         elif webhook_type=="Practitioner":
             #print(body)
             cleaned_data=extract_practitioner_data([body])
@@ -133,41 +133,3 @@ async def webhook(request: Request):
     except Exception as e:
         logger.error(f"Error processing webhook: {e}")
         raise HTTPException(status_code=500, detail=f"Webhook processing error: {e}")
-
-
-
-
-
-# # Ensure the JSON file exists
-# if not JSON_FILE_PATH.exists():
-#     with open(JSON_FILE_PATH, "w") as f:
-#         json.dump([], f)  # Initialize an empty list in the file
-        
-# async def append_to_json_file(body):
-#     json_file_path=JSON_FILE_PATH
-#     try:
-#         # Ensure the file exists and initialize if empty
-#         if not os.path.exists(json_file_path):
-#             with open(json_file_path, "w") as f:
-#                 json.dump([], f)
-
-#         # Open the JSON file for reading and writing
-#         with open(json_file_path, "r+") as f:
-#             try:
-#                 data = json.load(f)  # Load existing data
-#             except json.JSONDecodeError:
-#                 # If the file is empty or corrupted, start with an empty list
-#                 data = []
-
-#             # Ensure data is a list
-#             if not isinstance(data, list):
-#                 raise ValueError("JSON root element must be a list.")
-
-#             data.append(body)  # Append the new body
-#             f.seek(0)  # Reset file pointer to the beginning
-#             json.dump(data, f, indent=4)  # Save updated data
-#             f.truncate()  # Remove any leftover content in the file
-#     except Exception as e:
-#         print(f"An error occurred: {e}")
-   
-   
