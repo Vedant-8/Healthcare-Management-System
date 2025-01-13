@@ -6,6 +6,9 @@ import os
 from datetime import datetime,timezone
 from models.appointments import Appointment
 from sqlalchemy import update
+from datetime import datetime, timedelta
+
+
 
 COLUMN_NAMES = [
     "id",
@@ -20,6 +23,10 @@ COLUMN_NAMES = [
     "created_at",
     "updated_at",
 ]
+
+
+
+
 
 # Set up the router
 router = APIRouter()
@@ -232,5 +239,57 @@ def get_hospital_appointments(hospital_id: str):
             raise HTTPException(status_code=500, detail=str(e))
         
         
-        
-      
+    
+@router.post('/facility/get_available_slots')
+def GetAvailableSlotsForHospital(hospital_id: str):
+    try:
+        booked_appointments = get_hospital_appointments(hospital_id)
+        today_date = datetime.today().date()
+        response = helper_get_available_slots(booked_appointments=booked_appointments, date=today_date)
+        return {"available_slots": response}
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+
+def helper_get_available_slots(booked_appointments, date, max_slots=4):
+    # Define the working hours (10 AM to 8 PM)
+    start_time = datetime.combine(date, datetime.strptime("10:00:00", "%H:%M:%S").time())
+    end_time = datetime.combine(date, datetime.strptime("20:00:00", "%H:%M:%S").time())
+    buffer_time = timedelta(hours=1)  # Buffer time between slots (3 hours in your case)
+
+    # Filter appointments for the given date
+    booked_for_date = [
+        datetime.combine(date, datetime.strptime(appointment["appointment_time"], "%H:%M:%S").time())
+        for appointment in booked_appointments
+        if appointment["appointment_date"] == str(date)
+    ]
+    
+    # Sort booked slots
+    booked_for_date.sort()
+
+    # Calculate the total available time
+    available_duration = end_time - start_time
+
+    # Calculate the interval between available slots (maximize the spacing)
+    interval = available_duration // (max_slots + 1)  # +1 to include the last slot
+
+    available_slots = []
+    current_time = start_time
+
+    # Try to pick `max_slots` spaced evenly throughout the day
+    for _ in range(max_slots):
+        # Skip booked slots
+        while current_time in booked_for_date:
+            current_time += timedelta(minutes=30)  # Move by smaller intervals to skip the booked slot
+
+        # Add the slot if it's not already booked
+        if current_time not in booked_for_date:
+            available_slots.append(current_time.strftime("%H:%M:%S"))
+
+        # Move the current time forward by the calculated interval + buffer (ensure buffer is always used)
+        current_time += interval + buffer_time
+
+    return available_slots
