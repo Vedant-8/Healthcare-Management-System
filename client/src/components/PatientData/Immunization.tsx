@@ -21,7 +21,6 @@ const Immunization: React.FC = () => {
   const [immunizations, setImmunizations] = useState<ImmunizationData[] | null>(
     null
   );
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchImmunizationData = async () => {
@@ -29,23 +28,14 @@ const Immunization: React.FC = () => {
       const webhookType = "Immunization";
 
       try {
-        console.debug(
-          `[Immunization] Fetching immunization data for patient ${patientId}`
-        );
         const response = await getImmunizationData(patientId, webhookType);
         if (response && response.length > 0) {
-          console.debug(`[Immunization] Received immunization data:`, response);
           setImmunizations(response);
         } else {
-          throw new Error("Empty response from API");
+          setImmunizations(immunizationFallbackData); // Fallback data
         }
-      } catch (err) {
-        console.error(
-          `[Immunization] Error occurred, using fallback data:`,
-          err
-        );
-        setImmunizations(immunizationFallbackData);
-        setError("Failed to fetch immunization data. Using fallback data.");
+      } catch {
+        setImmunizations(immunizationFallbackData); // Fallback data
       }
     };
 
@@ -53,30 +43,30 @@ const Immunization: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Immunization Data</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <div className="p-4">
       {immunizations ? (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {immunizations.map((immunization, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <h3 className="font-bold text-blue-600">
+            <div
+              key={index}
+              className={`p-6 border rounded-lg shadow-md text-center flex flex-col justify-between h-full transition-all duration-300 ease-in-out transform ${
+                immunization.status === "completed"
+                  ? "bg-green-100" // Light green background for completed
+                  : "bg-white"
+              } hover:scale-105 hover:shadow-lg`}
+            >
+              <h3 className="font-bold text-lg text-green-800 mb-4">
                 {immunization.vaccineCode.text}
               </h3>
-              <p>
-                <strong>Status:</strong> {immunization.status}
-              </p>
-              <p>
-                <strong>Occurrence Date:</strong>{" "}
-                {new Date(immunization.occurrenceDateTime).toLocaleDateString()}
-              </p>
-              <p>
-                <strong>Last Updated:</strong>{" "}
-                {new Date(immunization.lastUpdated).toLocaleString()}
-              </p>
-              <p>
-                <strong>Vaccine Code:</strong> {immunization.vaccineCode.code}
-              </p>
+              <div className="mt-auto">
+                <p className="text-gray-700 mb-2">
+                  <strong>Vaccine Code:</strong> {immunization.vaccineCode.code}
+                </p>
+                <p className="text-gray-700">
+                  <strong>Occurrence Date:</strong>{" "}
+                  {new Date(immunization.occurrenceDateTime).toLocaleDateString()}
+                </p>
+              </div>
             </div>
           ))}
         </div>

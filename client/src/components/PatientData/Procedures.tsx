@@ -16,7 +16,6 @@ interface ProcedureData {
 
 const Procedures: React.FC = () => {
   const [procedures, setProcedures] = useState<ProcedureData[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchProcedureData = async () => {
@@ -24,20 +23,14 @@ const Procedures: React.FC = () => {
       const webhookType = "Procedure";
 
       try {
-        console.debug(
-          `[Procedures] Fetching procedure data for patient ${patientId}`
-        );
         const response = await getProcedureData(patientId, webhookType);
         if (response && response.length > 0) {
-          console.debug(`[Procedures] Received procedure data:`, response);
           setProcedures(response);
         } else {
-          throw new Error("Empty response from API");
+          setProcedures(procedureFallbackData);
         }
-      } catch (err) {
-        console.error(`[Procedures] Error occurred, using fallback data:`, err);
+      } catch {
         setProcedures(procedureFallbackData);
-        setError("Failed to fetch procedure data. Using fallback data.");
       }
     };
 
@@ -45,33 +38,43 @@ const Procedures: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Procedure Data</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <div className="overflow-x-auto p-4">
       {procedures ? (
-        <div>
-          {procedures.map((procedure, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <h3 className="font-bold text-red-600">{procedure.Procedure}</h3>
-              <p>
-                <strong>Status:</strong> {procedure.Status}
-              </p>
-              <p>
-                <strong>Performed:</strong>{" "}
-                {new Date(procedure.Performed).toLocaleDateString()}
-              </p>
-              <p>
-                <strong>Performer:</strong>{" "}
-                {procedure.Performer.map((performer, idx) => (
-                  <span key={idx}>
-                    {performer.Name} ({performer.Role})
-                    {idx < procedure.Performer.length - 1 && ", "}
-                  </span>
-                ))}
-              </p>
-            </div>
-          ))}
-        </div>
+        <table className="min-w-full table-auto">
+          <thead>
+            <tr>
+              <th className="px-4 py-2 text-left border-b">Procedure</th>
+              <th className="px-4 py-2 text-left border-b">Status</th>
+              <th className="px-4 py-2 text-left border-b">Performer</th>
+              <th className="px-4 py-2 text-left border-b">Performed</th>
+            </tr>
+          </thead>
+          <tbody>
+            {procedures.map((procedure, index) => (
+              <tr key={index}>
+                <td className="px-4 py-2 border-b">{procedure.Procedure}</td>
+                <td
+                  className={`px-4 py-2 border-b ${
+                    procedure.Status === "completed" ? "bg-green-100" : ""
+                  }`}
+                >
+                  {procedure.Status}
+                </td>
+                <td className="px-4 py-2 border-b">
+                  {procedure.Performer.map((performer, idx) => (
+                    <div key={idx}>
+                      <p className="font-bold">{performer.Name}</p>
+                      <p>{performer.Role}</p>
+                    </div>
+                  ))}
+                </td>
+                <td className="px-4 py-2 border-b">
+                  {new Date(procedure.Performed).toLocaleDateString()}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : (
         <p>Loading...</p>
       )}

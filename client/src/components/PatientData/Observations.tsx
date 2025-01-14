@@ -15,117 +15,112 @@ interface ObservationData {
 }
 
 const Observations: React.FC = () => {
-  const [labObservations, setLabObservations] = useState<
-    ObservationData[] | null
-  >(null);
-  const [vitalObservations, setVitalObservations] = useState<
-    ObservationData[] | null
-  >(null);
-  const [error, setError] = useState<string | null>(null);
+  const [labObservations, setLabObservations] = useState<ObservationData[] | null>(null);
+  const [vitalObservations, setVitalObservations] = useState<ObservationData[] | null>(null);
 
   useEffect(() => {
     const fetchObservationData = async () => {
       const patientId = "01943bc1-fd38-7c9c-9947-14f7458a7428";
       const webhookType = "Observation";
-      try {
-        console.debug(
-          `[Observations] Fetching observation data for patient ${patientId}`
-        );
-        const { labObservations, vitalObservations } = await getObservationData(
-          patientId,
-          webhookType
-        );
-        console.debug(`[Observations] Received observation data:`, {
-          labObservations,
-          vitalObservations,
-        });
 
-        // Limit to 5 entries from each observation type
-        setLabObservations(labObservations.slice(0, 5));
-        setVitalObservations(vitalObservations.slice(0, 5));
-      } catch (err) {
-        console.error(`[Observations] Error occurred:`, err);
-        setLabObservations(labObservationsFallbackData.slice(0, 5));
-        setVitalObservations(vitalObservationsFallbackData.slice(0, 5));
-        setError("Failed to fetch observation data. Using fallback data.");
+      try {
+        const { labObservations, vitalObservations } = await getObservationData(patientId, webhookType);
+        // Limit the data to 20 rows
+        setLabObservations(labObservations.slice(0, 20));
+        setVitalObservations(vitalObservations.slice(0, 20));
+      } catch {
+        // No error handling, using JSON data directly as per request
+        setLabObservations(labObservationsFallbackData.slice(0, 20));
+        setVitalObservations(vitalObservationsFallbackData.slice(0, 20));
       }
     };
 
     fetchObservationData();
   }, []);
 
+  // Function to determine the background color based on the value and reference range
+  const getValueBackgroundColor = (value: number, referenceRange: string) => {
+    if (referenceRange === "N/A") return "";
+    const [min, max] = referenceRange.split(" - ").map(parseFloat);
+    if (value < min) return "bg-yellow-200"; // Light yellow if value is lower than range
+    if (value > max) return "bg-red-200"; // Light red if value is higher than range
+    return "bg-green-200"; // Green if value is within the range
+  };
+
   return (
-    <div>
-      <h1>Observation Data</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      <h2>Laboratory Observations</h2>
-      {labObservations ? (
-        <div>
-          {labObservations.map((observation, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <p>
-                <strong>Observation Code:</strong>{" "}
-                {observation["Observation Code"]}
-              </p>
-              <p>
-                <strong>Value:</strong> {observation.Value} {observation.Unit}
-              </p>
-              <p>
-                <strong>Reference Range:</strong>{" "}
-                {observation["Reference Range"]}
-              </p>
-              <p>
-                <strong>Status:</strong> {observation.Status}
-              </p>
-              <p>
-                <strong>Issued Date:</strong>{" "}
-                {new Date(observation["Issued Date"]).toLocaleString()}
-              </p>
-              <p>
-                <strong>Effective Date:</strong>{" "}
-                {new Date(observation["Effective Date"]).toLocaleString()}
-              </p>
-            </div>
-          ))}
+    <div className="p-6">
+      {/* Laboratory Observations Table with Color Legend */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-red-600 text-2xl">Laboratory Observations</h2>
+        <div className="flex gap-2 items-center">
+          <div className="flex items-center">
+            <div className="w-4 h-4 bg-green-200 mr-2"></div>
+            <span>In Range</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-4 h-4 bg-yellow-200 mr-2"></div>
+            <span>Below Range</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-4 h-4 bg-red-200 mr-2"></div>
+            <span>Above Range</span>
+          </div>
         </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-
-      <h2>Vital Signs Observations</h2>
-      {vitalObservations ? (
-        <div>
-          {vitalObservations.map((observation, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <p>
-                <strong>Observation Code:</strong>{" "}
-                {observation["Observation Code"]}
-              </p>
-              <p>
-                <strong>Value:</strong> {observation.Value} {observation.Unit}
-              </p>
-              <p>
-                <strong>Reference Range:</strong>{" "}
-                {observation["Reference Range"]}
-              </p>
-              <p>
-                <strong>Status:</strong> {observation.Status}
-              </p>
-              <p>
-                <strong>Issued Date:</strong>{" "}
-                {new Date(observation["Issued Date"]).toLocaleString()}
-              </p>
-              <p>
-                <strong>Effective Date:</strong>{" "}
-                {new Date(observation["Effective Date"]).toLocaleString()}
-              </p>
-            </div>
+      </div>
+      
+      <table className="min-w-full border-collapse">
+        <thead>
+          <tr>
+            <th className="border-b px-4 py-2">Observation Code</th>
+            <th className="border-b px-4 py-2">Value</th>
+            <th className="border-b px-4 py-2">Status</th>
+            <th className="border-b px-4 py-2">Issued Date</th>
+            <th className="border-b px-4 py-2">Effective Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {labObservations?.map((observation, index) => (
+            <tr key={index}>
+              <td className="border-b px-4 py-2">{observation["Observation Code"]}</td>
+              <td
+                className={`border-b px-4 py-2 ${getValueBackgroundColor(observation.Value, observation["Reference Range"])}`}
+              >
+                {observation.Value} {observation.Unit}
+              </td>
+              <td className="border-b px-4 py-2">{observation.Status}</td>
+              <td className="border-b px-4 py-2">{new Date(observation["Issued Date"]).toLocaleString()}</td>
+              <td className="border-b px-4 py-2">{new Date(observation["Effective Date"]).toLocaleString()}</td>
+            </tr>
           ))}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+        </tbody>
+      </table>
+
+      {/* Vital Signs Observations Table */}
+      <h2 className="text-red-600 text-2xl mt-8 mb-4">Vital Signs Observations</h2>
+      <table className="min-w-full border-collapse">
+        <thead>
+          <tr>
+            <th className="border-b px-4 py-2">Observation Code</th>
+            <th className="border-b px-4 py-2">Value</th>
+            <th className="border-b px-4 py-2">Issued Date</th>
+            <th className="border-b px-4 py-2">Effective Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {vitalObservations?.map((observation, index) => (
+            <tr key={index}>
+              <td className="border-b px-4 py-2">{observation["Observation Code"]}</td>
+              <td
+                className={`border-b px-4 py-2 ${getValueBackgroundColor(observation.Value, observation["Reference Range"])}`}
+              >
+                {observation.Value} {observation.Unit}
+              </td>
+              <td className="border-b px-4 py-2">{new Date(observation["Issued Date"]).toLocaleString()}</td>
+              <td className="border-b px-4 py-2">{new Date(observation["Effective Date"]).toLocaleString()}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

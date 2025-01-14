@@ -14,7 +14,6 @@ interface ConditionData {
 
 const Condition: React.FC = () => {
   const [conditions, setConditions] = useState<ConditionData[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchConditionData = async () => {
@@ -22,18 +21,14 @@ const Condition: React.FC = () => {
       const webhookType = "Condition";
 
       try {
-        console.debug(`[Condition] Fetching condition data for patient ${patientId}`);
         const response = await getConditionData(patientId, webhookType);
         if (response && response.length > 0) {
-          console.debug(`[Condition] Received condition data:`, response);
           setConditions(response);
         } else {
-          throw new Error("Empty response from API");
+          setConditions(conditionFallbackData);
         }
       } catch (err) {
-        console.error(`[Condition] Error occurred, using fallback data:`, err);
         setConditions(conditionFallbackData);
-        setError("Failed to fetch condition data. Using fallback data.");
       }
     };
 
@@ -42,21 +37,42 @@ const Condition: React.FC = () => {
 
   return (
     <div>
-      <h1>Condition Data</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
       {conditions ? (
-        <div>
-          {conditions.map((condition, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <h3 className="font-bold text-red-600">{condition.Condition}</h3>
-              <p><strong>Status:</strong> {condition.Status}</p>
-              <p><strong>Code:</strong> {condition.Code}</p>
-              <p><strong>Code Type:</strong> {condition.CodeType}</p>
-              <p><strong>Display:</strong> {condition.display}</p>
-              <p><strong>First Seen:</strong> {new Date(condition.FirstSeen).toLocaleDateString()}</p>
-              <p><strong>Last Seen:</strong> {new Date(condition.LastSeen).toLocaleDateString()}</p>
-            </div>
-          ))}
+        <div className="overflow-x-auto">
+          <table className="min-w-full table-auto">
+            <thead>
+              <tr>
+                <th className="px-4 py-2 text-left border-b">Condition</th>
+                <th className="px-4 py-2 text-left border-b">Status</th>
+                <th className="px-4 py-2 text-left border-b">Code</th>
+                <th className="px-4 py-2 text-left border-b">Code Type</th>
+                <th className="px-4 py-2 text-left border-b">First Seen</th>
+                <th className="px-4 py-2 text-left border-b">Last Seen</th>
+              </tr>
+            </thead>
+            <tbody>
+              {conditions.map((condition, index) => (
+                <tr key={index}>
+                  <td className="px-4 py-2 border-b">{condition.Condition}</td>
+                  <td
+                    className={`px-4 py-2 border-b ${
+                      condition.Status === "resolved" ? "bg-green-200" : ""
+                    }`}
+                  >
+                    {condition.Status}
+                  </td>
+                  <td className="px-4 py-2 border-b">{condition.Code}</td>
+                  <td className="px-4 py-2 border-b">{condition.CodeType}</td>
+                  <td className="px-4 py-2 border-b">
+                    {new Date(condition.FirstSeen).toLocaleDateString()}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {new Date(condition.LastSeen).toLocaleDateString()}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       ) : (
         <p>Loading...</p>

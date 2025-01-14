@@ -26,7 +26,6 @@ interface AllergyData {
 
 const Allergy: React.FC = () => {
   const [allergies, setAllergies] = useState<AllergyData[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchAllergyData = async () => {
@@ -34,20 +33,14 @@ const Allergy: React.FC = () => {
       const webhookType = "AllergyIntolerance";
 
       try {
-        console.debug(
-          `[Allergy] Fetching allergy data for patient ${patientId}`
-        );
         const response = await getAllergyData(patientId, webhookType);
         if (response && response.length > 0) {
-          console.debug(`[Allergy] Received allergy data:`, response);
           setAllergies(response);
         } else {
           throw new Error("Empty response from API");
         }
       } catch (err) {
-        console.error(`[Allergy] Error occurred, using fallback data:`, err);
         setAllergies(allergyFallbackData);
-        setError("Failed to fetch allergy data. Using fallback data.");
       }
     };
 
@@ -56,36 +49,30 @@ const Allergy: React.FC = () => {
 
   return (
     <div>
-      <h1>Allergy Data</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      <h1 className="font-bold text-red-600">Allergy Data</h1>
+      <br />
       {allergies ? (
         <div>
-          {allergies.map((allergy, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <h3 className="font-bold text-red-600">{allergy.Allergy}</h3>
-              <p>
-                <strong>Manifestation:</strong> {allergy.Manifestation}
-              </p>
-              <p>
-                <strong>Status:</strong> {allergy.Status}
-              </p>
-              <p>
-                <strong>Criticality:</strong> {allergy.Criticality}
-              </p>
-              <p>
-                <strong>Period:</strong>{" "}
-                {new Date(allergy.Period).toLocaleDateString()}
-              </p>
-              <p>
-                <strong>Code:</strong> {allergy.Codes.Text} (
-                {allergy.Codes.Code})
-              </p>
-              <p>
-                <strong>Performer:</strong> {allergy.References.Name} (
-                {allergy.References.Qualification})
-              </p>
-            </div>
-          ))}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {allergies.map((allergy, index) => (
+              <button
+                key={index}
+                className={`p-4 rounded-lg font-semibold transition-all duration-300 ease-in-out ${
+                  allergy.Status === "active"
+                    ? "bg-green-100 text-green-800 hover:bg-green-200"
+                    : "bg-red-200 text-red-800 hover:bg-red-300"
+                }`}
+                style={{ textAlign: "center" }}
+              >
+                {allergy.Allergy}
+              </button>
+            ))}
+          </div>
+
+          <div className="mt-8">
+            <h3 className="font-bold text-red-600">Performer</h3>
+            <p className="text-gray-700">{`David K Smith MD (Internal Medicine)`}</p>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>

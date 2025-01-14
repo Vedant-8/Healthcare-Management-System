@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getPractitionerData } from "../../api/practitionerApi";
 import practitionerFallbackData from "../../../../server/services/webhook/temp_jsons/Practitioner.json";
+import PersonIcon from '@mui/icons-material/Person';
 
 interface PractitionerData {
   "Full URL": string;
@@ -11,7 +12,6 @@ interface PractitionerData {
 
 const Practitioner: React.FC = () => {
   const [practitioners, setPractitioners] = useState<PractitionerData[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchPractitionerData = async () => {
@@ -19,18 +19,14 @@ const Practitioner: React.FC = () => {
       const webhookType = "Practitioner";
 
       try {
-        console.debug(`[Practitioner] Fetching practitioner data for patient ${patientId}`);
         const response = await getPractitionerData(patientId, webhookType);
         if (response && response.length > 0) {
-          console.debug(`[Practitioner] Received practitioner data:`, response);
           setPractitioners(response.slice(0, 10)); // Take only the first 10 entries
         } else {
-          throw new Error("Empty response from API");
+          setPractitioners(practitionerFallbackData.slice(0, 10)); // Use fallback data
         }
-      } catch (err) {
-        console.error(`[Practitioner] Error occurred, using fallback data:`, err);
-        setPractitioners(practitionerFallbackData.slice(0, 10)); // Use fallback data, taking only the first 10
-        setError("Failed to fetch practitioner data. Using fallback data.");
+      } catch {
+        setPractitioners(practitionerFallbackData.slice(0, 10)); // Use fallback data
       }
     };
 
@@ -38,17 +34,21 @@ const Practitioner: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Practitioner Data</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <div className="p-4">
       {practitioners ? (
-        <div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {practitioners.map((practitioner, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <p><strong>Name:</strong> {practitioner.Name}</p>
-              <p><strong>Full URL:</strong> {practitioner["Full URL"]}</p>
-              <p><strong>ID:</strong> {practitioner.ID}</p>
-              <p><strong>Last Updated:</strong> {new Date(practitioner["Last Updated"]).toLocaleString()}</p>
+            <div
+              key={index}
+              className="flex flex-col items-center p-4 border rounded shadow-sm hover:shadow-lg transition-all duration-200 ease-in-out transform hover:scale-105 relative"
+            >
+              <PersonIcon style={{ fontSize: 50 }} className="mb-2" />
+              <p className="font-bold mb-2 text-red-600">{practitioner.Name}</p>
+              <br />
+              {/* ID is hidden by default, shown on hover */}
+              <p className="absolute bottom-4 text-sm text-gray-500 opacity-0 transition-all duration-300 hover:opacity-100">
+                ID: {practitioner.ID}
+              </p>
             </div>
           ))}
         </div>

@@ -16,27 +16,20 @@ interface MedicationStatementData {
 
 const Medications: React.FC = () => {
   const [medications, setMedications] = useState<MedicationStatementData[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchMedicationData = async () => {
       const patientId = "01943bc1-fd38-7c9c-9947-14f7458a7428";
       const webhookType = "MedicationStatement";
       try {
-        console.debug(
-          `[Medications] Fetching medication data for patient ${patientId}`
-        );
         const response = await getMedicationStatementData(patientId, webhookType);
         if (response && response.length > 0) {
-          console.debug(`[Medications] Received medication data:`, response);
           setMedications(response);
         } else {
-          throw new Error("Empty response from API");
+          setMedications(medicationStatementFallbackData);
         }
-      } catch (err) {
-        console.error(`[Medications] Error occurred, using fallback data:`, err);
+      } catch {
         setMedications(medicationStatementFallbackData);
-        setError("Failed to fetch medication data. Using fallback data.");
       }
     };
 
@@ -44,24 +37,60 @@ const Medications: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Medication Statement Data</h1>
-      {error && <p style={{ color: "red" }}>{error}</p>}
+    <div className="p-4">
+      {/* Medications Table with Color Legend */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-red-600 text-2xl">Medications</h2>
+        <div className="flex gap-2 items-center">
+          <div className="flex items-center">
+            <div className="w-4 h-4 bg-green-100 mr-2"></div>
+            <span>Completed</span>
+          </div>
+          <div className="flex items-center">
+            <div className="w-4 h-4 bg-blue-100 mr-2"></div>
+            <span>Active</span>
+          </div>
+        </div>
+      </div>
+
       {medications ? (
-        <div>
-          {medications.map((medication, index) => (
-            <div key={index} className="my-4 p-4 border rounded shadow-sm">
-              <h3 className="font-bold text-red-600">{medication.Medication}</h3>
-              <p><strong>ID:</strong> {medication.id}</p>
-              <p><strong>Code:</strong> {medication.Code}</p>
-              <p><strong>Last Updated:</strong> {new Date(medication.lastUpdated).toLocaleDateString()}</p>
-              <p><strong>Dosage:</strong> {medication.dosage}</p>
-              <p><strong>Route:</strong> {medication.route}</p>
-              <p><strong>Value:</strong> {medication.value}</p>
-              <p><strong>Unit:</strong> {medication.unit}</p>
-              <p><strong>Status:</strong> {medication.status}</p>
-            </div>
-          ))}
+        <div className="overflow-x-auto">
+          <table className="min-w-full table-auto border-collapse">
+            <thead>
+              <tr>
+                <th className="px-4 py-2 text-left border-b">Medication</th>
+                <th className="px-4 py-2 text-left border-b">Code</th>
+                <th className="px-4 py-2 text-left border-b">Status</th>
+                <th className="px-4 py-2 text-left border-b">Dosage</th>
+                <th className="px-4 py-2 text-left border-b">Amount</th>
+                <th className="px-4 py-2 text-left border-b">Last Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              {medications.map((medication, index) => (
+                <tr key={index}>
+                  <td className="px-4 py-2 border-b">{medication.Medication}</td>
+                  <td className="px-4 py-2 border-b">{medication.Code}</td>
+                  <td
+                    className={`px-4 py-2 border-b ${
+                      medication.status === "completed"
+                        ? "bg-green-100"
+                        : "bg-blue-100"
+                    }`}
+                  >
+                    {medication.status}
+                  </td>
+                  <td className="px-4 py-2 border-b">{medication.dosage}</td>
+                  <td className="px-4 py-2 border-b">
+                    {medication.value} {medication.unit}
+                  </td>
+                  <td className="px-4 py-2 border-b">
+                    {new Date(medication.lastUpdated).toLocaleDateString()}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       ) : (
         <p>Loading...</p>
