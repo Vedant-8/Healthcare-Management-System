@@ -31,7 +31,7 @@ def GetNearbyHospitals(radius,Latitude,Longitude):
 
 
 @router.get("/nearby_pharmacy")
-def GetNearbyHospitals(radius,Latitude,Longitude):
+def GetNearbyPharmacy(radius,Latitude,Longitude):
     query="pharmacy"
     try:
         pharmacy_json=GetPlacesUsingSquare(query,radius,Latitude,Longitude)
@@ -71,4 +71,23 @@ async def get_directions(
             "dest_lon": dest_lon
         }
     )
+
+
+@router.get("/nearby_vaccination")
+def GetNearbyVaccinations(radius,Latitude,Longitude):
+    query="vaccination"
+    try:
+        pharmacy_json=GetPlacesUsingSquare(query,radius,Latitude,Longitude)
+        if not pharmacy_json:
+            raise HTTPException(status_code=404, detail="No vaccinations found")
+        
+        pharmacy_data=Get_5_hospitals(pharmacy_json)
+        return {"top_5_vaccination": pharmacy_data}
+        
+    except HTTPException as http_error:
+        # Raise HTTP exceptions for client-side errors (like 404)
+        raise http_error
     
+    except Exception as e:
+        # Handle unexpected errors
+        raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {str(e)}")

@@ -3,7 +3,7 @@ from fastapi import FastAPI, HTTPException, Request
 import uvicorn 
 from fastapi.middleware.cors import CORSMiddleware
 import logging
-import os, time, asyncio
+import os, asyncio
 
 from routers.map_router import router as map_router
 from routers.patient_router import router as patient_router
