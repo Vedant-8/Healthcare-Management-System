@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Card, Typography, Grid } from "@mui/material";
+import { Card, Typography, Grid, Snackbar, Alert } from "@mui/material";
+import NotificationAddIcon from "@mui/icons-material/NotificationAdd";
+import NotificationsOffIcon from "@mui/icons-material/NotificationsOff";
 import {
   PieChart,
   Pie,
@@ -17,6 +19,10 @@ import medicationData from "../../../../server/services/webhook/temp_jsons/medic
 
 const Summary: React.FC = () => {
   const [medications, setMedications] = useState<any[]>([]);
+  const [reminderStatus, setReminderStatus] = useState<Record<string, boolean>>(
+    {}
+  );
+  const [snackbarMessage, setSnackbarMessage] = useState<string | null>(null);
 
   // Updated 6 months data for activity charts
   const monthWiseData = [
@@ -40,7 +46,32 @@ const Summary: React.FC = () => {
   useEffect(() => {
     const activeMeds = medicationData.filter((med) => med.status === "active");
     setMedications(activeMeds);
+
+    // Initialize reminders for each medication
+    const initialReminders = activeMeds.reduce((acc, med) => {
+      acc[med.id] = false; // No reminders set initially
+      return acc;
+    }, {} as Record<string, boolean>);
+    setReminderStatus(initialReminders);
   }, []);
+
+  // Toggle Reminder
+  const toggleReminder = (medicationId: string, medicationName: string) => {
+    setReminderStatus((prevStatus) => {
+      const isReminderSet = !prevStatus[medicationId];
+      setSnackbarMessage(
+        isReminderSet
+          ? `Reminder for ${medicationName} is set!`
+          : `Reminder for ${medicationName} is removed!`
+      );
+      return { ...prevStatus, [medicationId]: isReminderSet };
+    });
+  };
+
+  // Close Snackbar
+  const handleCloseSnackbar = () => {
+    setSnackbarMessage(null);
+  };
 
   return (
     <div className="w-full p-4">
@@ -129,15 +160,49 @@ const Summary: React.FC = () => {
               fontSize: "14px",
             }}
           >
-            <Typography
-              variant="body1"
-              className="bg-light-blue-200 text-gray-700"
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "6px",
+                alignItems: "center",
+              }}
             >
-              {med.Medication}
-            </Typography>
+              <Typography
+                variant="body1"
+                className="bg-light-blue-200 text-gray-700"
+              >
+                {med.Medication}
+              </Typography>
+              <div
+                onClick={() => toggleReminder(med.id, med.Medication)}
+                style={{ cursor: "pointer" }}
+              >
+                {reminderStatus[med.id] ? (
+                  <NotificationsOffIcon sx={{ color: "#f44336" }} />
+                ) : (
+                  <NotificationAddIcon sx={{ color: "#4caf50" }} />
+                )}
+              </div>
+            </div>
           </Card>
         ))}
       </div>
+
+      {/* Snackbar for reminder messages */}
+      <Snackbar
+        open={!!snackbarMessage}
+        autoHideDuration={3000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity="info"
+          sx={{ width: "100%" }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
 
       {/* Section 3: Health Tips */}
       <Typography

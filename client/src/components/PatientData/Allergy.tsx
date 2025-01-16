@@ -49,8 +49,6 @@ const Allergy: React.FC = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-red-600">Allergy Data</h1>
-      <br />
       {allergies ? (
         <div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">

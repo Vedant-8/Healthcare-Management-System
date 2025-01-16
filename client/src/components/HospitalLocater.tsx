@@ -1,7 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { Button, Typography, Card, Drawer, Box } from "@mui/material";
+import {
+  Button,
+  Typography,
+  Card,
+  Drawer,
+  Box,
+  Table,
+  TableBody,
+  TableRow,
+  TableCell,
+} from "@mui/material";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import HomeIcon from "@mui/icons-material/Home";
+import DirectionsIcon from "@mui/icons-material/Directions";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import { useNavigate } from "react-router-dom"; // For navigation
 import { getNearbyHospitals } from "../api/nearbyHospitalsApi";
-import AppointmentForm from "../forms/AppointmentForm"; // Import the AppointmentForm component
+import AppointmentForm from "../forms/AppointmentForm";
 
 interface HospitalData {
   fsq_id: string;
@@ -10,15 +26,8 @@ interface HospitalData {
   latitude: number;
   longitude: number;
   address: string | null;
-  locality: string | null;
-  region: string | null;
-  postcode: string | null;
-  country: string;
   formatted_address: string;
   "phone number": string;
-  email: string;
-  categories: string;
-  link: string;
 }
 
 interface HospitalLocaterProps {
@@ -27,16 +36,27 @@ interface HospitalLocaterProps {
   radius: number;
 }
 
-const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, radius }) => {
+const HospitalLocater: React.FC<HospitalLocaterProps> = ({
+  latitude,
+  longitude,
+  radius,
+}) => {
   const [hospitals, setHospitals] = useState<HospitalData[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [drawerOpen, setDrawerOpen] = useState(false); // State to control the Drawer
-  const [selectedHospital, setSelectedHospital] = useState<HospitalData | null>(null); // Store selected hospital details
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedHospital, setSelectedHospital] = useState<HospitalData | null>(
+    null
+  );
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchNearbyHospitals = async () => {
       try {
-        const hospitalData = await getNearbyHospitals(latitude, longitude, radius);
+        const hospitalData = await getNearbyHospitals(
+          latitude,
+          longitude,
+          radius
+        );
         setHospitals(hospitalData);
       } catch (err) {
         setError("Failed to fetch nearby hospitals");
@@ -46,16 +66,18 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, 
     fetchNearbyHospitals();
   }, [latitude, longitude, radius]);
 
-  // Open Drawer with selected hospital details
   const handleScheduleClick = (hospital: HospitalData) => {
     setSelectedHospital(hospital);
     setDrawerOpen(true);
   };
 
-  // Close the Drawer
   const handleDrawerClose = () => {
     setDrawerOpen(false);
     setSelectedHospital(null);
+  };
+
+  const handleDirectionsClick = () => {
+    navigate("/directions");
   };
 
   return (
@@ -68,41 +90,83 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, 
             <Card
               key={index}
               elevation={6}
-              className="w-full max-w-sm p-6 bg-white rounded-lg shadow-lg flex flex-col"
+              className="w-full max-w-xs p-4 bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                minHeight: "280px",
+              }}
             >
-              {/* Hospital Name centered */}
-              <Typography variant="h6" className="font-bold mb-4 text-center text-gray-800">
-                {hospital.name}
-              </Typography>
-
-              <div className="flex-grow">
-                <Typography variant="body2" className="mb-2 text-gray-600">
-                  <strong>Distance:</strong> {hospital.distance} meters
+              {/* Hospital Name with Red Background */}
+              <Box
+                sx={{
+                  backgroundColor: "#f75f54",
+                  padding: "10px",
+                  borderRadius: "5px 5px 0 0",
+                  textAlign: "center",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "white",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {hospital.name}
                 </Typography>
+              </Box>
 
-                <Typography variant="body2" className="mb-2 text-gray-600">
-                  <strong>Address:</strong> {hospital.formatted_address || "Not available"}
-                </Typography>
-
-                <Typography variant="body2" className="mb-2 text-gray-600">
-                  <strong>Phone:</strong> {hospital["phone number"]}
-                </Typography>
-
-                <Typography variant="body2" className="mb-2 text-gray-600">
-                  <strong>Email:</strong> {hospital.email}
-                </Typography>
-
-                <Typography variant="body2" className="mb-2 text-gray-600">
-                  <strong>Category:</strong> {hospital.categories}
-                </Typography>
-              </div>
+              {/* Table for Details */}
+              <Table>
+                <TableBody>
+                  <TableRow>
+                    <TableCell>
+                      <LocationOnIcon
+                        sx={{ color: "#FF5722", marginRight: 1 }}
+                      />
+                      Distance
+                    </TableCell>
+                    <TableCell>{hospital.distance} meters</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <HomeIcon sx={{ color: "#3F51B5", marginRight: 1 }} />
+                      Address
+                    </TableCell>
+                    <TableCell>
+                      {hospital.formatted_address || "Not available"}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>
+                      <PhoneIcon sx={{ color: "#4CAF50", marginRight: 1 }} />
+                      Phone
+                    </TableCell>
+                    <TableCell>
+                      {hospital["phone number"] || "Not available"}
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
 
               {/* Buttons */}
-              <Box display="flex" gap={2} mt={2}>
+              <Box display="flex" gap={2} mt={3} justifyContent="flex-end">
                 <Button
                   variant="contained"
-                  color="error"
-                  onClick={() => console.log('Navigate to directions')}
+                  sx={{
+                    backgroundColor: "#1e6932",
+                    color: "white",
+                    "&:hover": {
+                      backgroundColor: "darkred",
+                    },
+                    borderRadius: "20px",
+                    textTransform: "none",
+                    fontWeight: "bold",
+                  }}
+                  startIcon={<DirectionsIcon />}
+                  onClick={handleDirectionsClick}
                   className="flex-grow"
                 >
                   Directions
@@ -110,10 +174,16 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, 
                 <Button
                   variant="contained"
                   color="primary"
+                  startIcon={<CalendarMonthIcon />}
                   onClick={() => handleScheduleClick(hospital)}
                   className="flex-grow"
+                  sx={{
+                    borderRadius: "20px",
+                    textTransform: "none",
+                    fontWeight: "bold",
+                  }}
                 >
-                  Schedule Appointment
+                  Schedule
                 </Button>
               </Box>
             </Card>
@@ -123,7 +193,7 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({ latitude, longitude, 
         <p>Loading...</p>
       )}
 
-      {/* MUI Drawer for Appointment Form */}
+      {/* Drawer for Appointment Form */}
       <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerClose}>
         <Box width={400} p={3}>
           {selectedHospital && (
