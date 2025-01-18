@@ -76,7 +76,7 @@ const Summary: React.FC = () => {
   return (
     <div className="w-full p-4">
       {/* Section 1: Graphs */}
-      <Typography variant="h5" className="mb-4 pl-4 text-red-600">
+      <Typography variant="h5" className="mb-4 pl-4 text-center text-red-600">
         Activity & Health Summary
       </Typography>
       <Grid container spacing={4}>
@@ -149,41 +149,43 @@ const Summary: React.FC = () => {
       <Typography variant="h5" className="mt-8 mb-4 pl-4 text-red-600">
         Active Medications
       </Typography>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+      <div>
         {medications.map((med) => (
           <Card
             key={med.id}
-            className="p-4 rounded-lg shadow-md transition-all duration-300 hover:shadow-lg bg-blue-200"
+            className="p-4 mb-2 shadow-md transition-all duration-300 hover:shadow-lg bg-blue-200"
             sx={{
-              textAlign: "center",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
               backgroundColor: "#e3e9fc",
               fontSize: "14px",
+              width: "100%",
             }}
           >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "6px",
-                alignItems: "center",
+            {/* Medication Name */}
+            <Typography
+              variant="body1"
+              sx={{
+                textAlign: "left",
+                color: "#616161",
+                fontWeight: "bold",
+                flex: 1, // Take up available space
               }}
             >
-              <Typography
-                variant="body1"
-                className="bg-light-blue-200 text-gray-700"
-              >
-                {med.Medication}
-              </Typography>
-              <div
-                onClick={() => toggleReminder(med.id, med.Medication)}
-                style={{ cursor: "pointer" }}
-              >
-                {reminderStatus[med.id] ? (
-                  <NotificationsOffIcon sx={{ color: "#f44336" }} />
-                ) : (
-                  <NotificationAddIcon sx={{ color: "#4caf50" }} />
-                )}
-              </div>
+              {med.Medication}
+            </Typography>
+
+            {/* Reminder Icon */}
+            <div
+              onClick={() => toggleReminder(med.id, med.Medication)}
+              style={{ cursor: "pointer", paddingLeft: "16px" }}
+            >
+              {reminderStatus[med.id] ? (
+                <NotificationsOffIcon sx={{ color: "#f44336" }} />
+              ) : (
+                <NotificationAddIcon sx={{ color: "#4caf50" }} />
+              )}
             </div>
           </Card>
         ))}
