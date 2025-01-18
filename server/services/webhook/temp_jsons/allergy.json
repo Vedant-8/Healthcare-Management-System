@@ -4,7 +4,7 @@
         "Manifestation": "Hives",
         "Status": "active",
         "Criticality": "N/A",
-        "Period": "2021-06-28T00:00:00.000Z",
+        "Period": "2023-10-01T00:00:00.000Z", 
         "Codes": {
             "Text": "Molds & Smuts",
             "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -21,7 +21,7 @@
         "Manifestation": "Sneezing",
         "Status": "active",
         "Criticality": "N/A",
-        "Period": "2021-06-28T00:00:00.000Z",
+        "Period": "2023-07-01T00:00:00.000Z", 
         "Codes": {
             "Text": "Nuts",
             "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -38,7 +38,7 @@
         "Manifestation": "Sores",
         "Status": "active",
         "Criticality": "N/A",
-        "Period": "2021-06-28T00:00:00.000Z",
+        "Period": "2024-01-01T00:00:00.000Z", 
         "Codes": {
             "Text": "Ibuprofen",
             "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -55,7 +55,7 @@
         "Manifestation": "Rash",
         "Status": "active",
         "Criticality": "N/A",
-        "Period": "2021-06-28T00:00:00.000Z",
+        "Period": "2023-04-01T00:00:00.000Z", 
         "Codes": {
             "Text": "Chlorine",
             "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
@@ -72,7 +72,7 @@
         "Manifestation": "Hives",
         "Status": "active",
         "Criticality": "N/A",
-        "Period": "2021-06-28T00:00:00.000Z",
+        "Period": "2023-01-01T00:00:00.000Z", 
         "Codes": {
             "Text": "Dust",
             "System": "http://www.nlm.nih.gov/research/umls/rxnorm",
