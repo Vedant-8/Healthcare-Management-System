@@ -42,9 +42,9 @@ Learn more about the development of this Healthcare Management System in my [Med
 
 ## Screenshots 📸
 
-![LandingPage](https://github.com/user-attachments/assets/5259c1a6-ff12-4004-9e76-f650578059e2)
-![PatientDashboard](https://github.com/user-attachments/assets/5629d68f-ce57-41e0-b9f7-a3943c97e897)
-![SearchNearbyHospitals](https://github.com/user-attachments/assets/69843ddb-c6c6-4c99-b16a-85787383605d)
+<img width="1115" alt="LandingPage" src="https://github.com/user-attachments/assets/5259c1a6-ff12-4004-9e76-f650578059e2">
+<img width="1115" alt="PatientDashboard" src="https://github.com/user-attachments/assets/5629d68f-ce57-41e0-b9f7-a3943c97e897">
+<img width="1115" alt="SearchNearbyHospitals" src="https://github.com/user-attachments/assets/69843ddb-c6c6-4c99-b16a-85787383605d">
 
 ## API Integrations 🔌
 
