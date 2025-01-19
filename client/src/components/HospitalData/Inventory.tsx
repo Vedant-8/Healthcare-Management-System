@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import hospitalInventoryFallbackData from "../../../../server/services/webhook/temp_jsons/hospital_inverory.json";
+import { Card, CardContent} from "@mui/material";
 
 interface InventoryItem {
   item_id: string;
@@ -17,70 +18,46 @@ interface InventoryData {
 }
 
 const Inventory: React.FC = () => {
-  const [inventoryData, setInventoryData] = useState<InventoryData | null>(
-    null
-  );
-  const [error, setError] = useState<string | null>(null);
+  const [inventoryData, setInventoryData] = useState<InventoryData | null>(null);
 
   useEffect(() => {
-    const fetchInventoryData = async () => {
-      const hospitalId = "0194370c-bdfc-7b80-84d7-d75fcfc566db"; // Example hospital ID
-      const apiUrl = `/api/hospital/${hospitalId}/inventory`; // Example API endpoint for fetching inventory
-
-      try {
-        console.debug(
-          `[Inventory] Fetching inventory data for hospital ${hospitalId}`
-        );
-        const response = await fetch(apiUrl);
-
-        if (response.ok) {
-          const data: InventoryData = await response.json();
-          console.debug(`[Inventory] Received inventory data:`, data);
-          setInventoryData(data);
-        } else {
-          throw new Error(`API returned status ${response.status}`);
-        }
-      } catch (err) {
-        console.error(`[Inventory] Error occurred, using fallback data:`, err);
-        setInventoryData(hospitalInventoryFallbackData as InventoryData);
-        setError("Failed to fetch inventory data. Using fallback data.");
-      }
-    };
-
-    fetchInventoryData();
+    // Directly using fallback data as shown in the other components
+    setInventoryData(hospitalInventoryFallbackData as InventoryData);
   }, []);
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Hospital Inventory</h1>
-      {error && <p className="text-red-600">{error}</p>}
       {inventoryData ? (
-        <div>
-          <h2 className="text-xl font-semibold mb-2 text-gray-800">
-            {inventoryData.hospital_name}
-          </h2>
-          <p className="mb-4 text-gray-600">
-            <strong>Last Updated:</strong>{" "}
-            {new Date(inventoryData.last_updated).toLocaleString()}
-          </p>
-          <div className="space-y-4">
-            {inventoryData.inventory.map((item) => (
-              <div
-                key={item.item_id}
-                className="border p-4 rounded shadow-sm bg-white"
-              >
-                <h3 className="font-bold text-gray-700">{item.item_name}</h3>
-                <p>
-                  <strong>Quantity:</strong> {item.quantity} {item.unit}
-                </p>
-                <p>
-                  <strong>Expiry Date:</strong>{" "}
-                  {new Date(item.expiry_date).toLocaleDateString()}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Card sx={{ maxWidth: "100%", boxShadow: 3 }}>
+          <CardContent>
+            <div className="overflow-x-auto">
+              <table className="min-w-full table-auto border-collapse">
+                <thead>
+                  <tr>
+                    <th className="px-4 py-2 text-left border-b">Item ID</th>
+                    <th className="px-4 py-2 text-left border-b">Item Name</th>
+                    <th className="px-4 py-2 text-left border-b">Quantity & Unit</th>
+                    <th className="px-4 py-2 text-left border-b">Expiry Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {inventoryData.inventory.map((item) => (
+                    <tr key={item.item_id}>
+                      <td className="px-4 py-2 border-b">{item.item_id}</td>
+                      <td className="px-4 py-2 border-b">{item.item_name}</td>
+                      <td className="px-4 py-2 border-b">
+                        {item.quantity} {item.unit}
+                      </td>
+                      <td className="px-4 py-2 border-b">
+                        {new Date(item.expiry_date).toLocaleDateString()}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
       ) : (
         <p>Loading...</p>
       )}

@@ -6,6 +6,7 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 import { useNavigate } from "react-router-dom";
+import MedicalServicesIcon from '@mui/icons-material/MedicalServices';
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
@@ -17,13 +18,15 @@ const Navbar: React.FC = () => {
   return (
     <header className="bg-red-500 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-        <h1
-          className="text-2xl font-bold text-white cursor-pointer hover:text-gray-300 transition duration-300"
-          onClick={() => handleNavigation("/")}
-          style={{ fontFamily: "'Inter', sans-serif" }}
-        >
-          MedEase
-        </h1>
+      <h1
+  className="text-2xl font-bold text-white cursor-pointer hover:text-gray-300 transition duration-300 flex items-center gap-2"
+  onClick={() => handleNavigation("/")}
+  style={{ fontFamily: "'Inter', sans-serif" }}
+>
+  <MedicalServicesIcon sx={{ fontSize: "2rem" }} />
+  MedEase
+</h1>
+
         <nav className="flex items-center space-x-4">
           {/* Links visible only when the user is signed out */}
           <SignedOut>

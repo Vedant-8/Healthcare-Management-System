@@ -3,12 +3,12 @@ import {
   Button,
   Typography,
   Card,
-  Drawer,
   Box,
   Table,
   TableBody,
   TableRow,
   TableCell,
+  Modal,
 } from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -17,7 +17,7 @@ import DirectionsIcon from "@mui/icons-material/Directions";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { useNavigate } from "react-router-dom"; // For navigation
 import { getNearbyHospitals } from "../api/nearbyHospitalsApi";
-import AppointmentForm from "../forms/AppointmentForm";
+import Scheduler from "./Scheduler";
 
 interface HospitalData {
   fsq_id: string;
@@ -43,7 +43,7 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({
 }) => {
   const [hospitals, setHospitals] = useState<HospitalData[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [selectedHospital, setSelectedHospital] = useState<HospitalData | null>(
     null
   );
@@ -68,11 +68,11 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({
 
   const handleScheduleClick = (hospital: HospitalData) => {
     setSelectedHospital(hospital);
-    setDrawerOpen(true);
+    setModalOpen(true);
   };
 
-  const handleDrawerClose = () => {
-    setDrawerOpen(false);
+  const handleModalClose = () => {
+    setModalOpen(false);
     setSelectedHospital(null);
   };
 
@@ -193,19 +193,36 @@ const HospitalLocater: React.FC<HospitalLocaterProps> = ({
         <p>Loading...</p>
       )}
 
-      {/* Drawer for Appointment Form */}
-      <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerClose}>
-        <Box width={400} p={3}>
+      {/* Modal for Appointment Form */}
+      <Modal
+        open={modalOpen}
+        onClose={handleModalClose}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          backdropFilter: "blur(5px)", // Blur the background
+        }}
+      >
+        <Box
+          sx={{
+            width: 400,
+            backgroundColor: "white",
+            borderRadius: "10px",
+            boxShadow: 24,
+            padding: 3,
+          }}
+        >
           {selectedHospital && (
             <>
-              <Typography variant="h6" className="mb-4 text-gray-800">
+              <Typography variant="h6" className="mb-4 text-red-500 font-bold">
                 Schedule Appointment for {selectedHospital.name}
               </Typography>
-              <AppointmentForm />
+              <Scheduler />
             </>
           )}
         </Box>
-      </Drawer>
+      </Modal>
     </div>
   );
 };
