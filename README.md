@@ -1,6 +1,6 @@
-# Healthcare Management System 🚑💻
+# MedEase - Healthcare Management System 🚑💻
 
-Welcome to the **Healthcare Management System**, a comprehensive platform designed to streamline patient care and hospital management. This system integrates various healthcare services, providing users with easy access to their health records, appointment scheduling, and more all in one place.
+Welcome to the **MedEase**, a comprehensive platform designed to streamline patient care and healthcare management. This system integrates various healthcare services, providing users with easy access to their health records, appointment scheduling, and more all in one place.
 
 ## Postman Collection 🔥
 
