@@ -5,7 +5,7 @@ Welcome to the **MedEase**, a comprehensive platform designed to streamline pati
 ## Postman Collection 🔥
 
 You can explore the API endpoints using the Postman collection:  
-[View Postman Collection](link-to-postman)
+[View Postman Collection]([link-to-postman](https://www.postman.com/postonauts/postonauts-workspace/collection/imzr7tq/medease))
 
 ## Medium Article 📝
 
