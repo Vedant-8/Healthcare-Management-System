@@ -10,7 +10,7 @@ You can explore the API endpoints using the Postman collection:
 
 ## Medium Article 📝
 
-Learn more about the development of this Healthcare Management System in my [Medium article](link).
+Learn more about the development of this Healthcare Management System in my [Medium article](https://medium.com/@omkar_yadav18/medease-revolutionizing-healthcare-management-0931c5bd962a).
 
 ## Features ✨
 
