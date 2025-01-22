@@ -9,7 +9,6 @@ TWILIO_PHONE_NUMBER =  os.getenv("TWILIO_PHONE_NUMBER")
 
 
 def sms_medication_remainder(phone_number, medication='',tim=''):
-    message_body = "hiiii"
 
     try:
         # Initialize Twilio client
