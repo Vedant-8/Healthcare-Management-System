@@ -5,12 +5,17 @@ Welcome to the **MedEase**, a comprehensive platform designed to streamline pati
 
 ## Postman Collection 🔥
 
-You can explore the API endpoints using the Postman collection:  
-[View Postman Collection](https://www.postman.com/postonauts/postonauts-workspace/collection/imzr7tq/medease)
+You can explore the API endpoints using the Postman collection:  [View Postman Collection](https://www.postman.com/postonauts/postonauts-workspace/collection/imzr7tq/medease)
 
 ## Medium Article 📝
 
 Learn more about the development of this Healthcare Management System in my [Medium article](https://medium.com/@omkar_yadav18/medease-revolutionizing-healthcare-management-0931c5bd962a).
+
+## YouTube Demo 🎥
+
+Watch a demo of the Healthcare Management System here: 
+<iframe width="560" height="315" src="(https://www.youtube.com/watch?v=c9sDtzVAtJw)" frameborder="0" allowfullscreen></iframe>
+
 
 ## Features ✨
 
