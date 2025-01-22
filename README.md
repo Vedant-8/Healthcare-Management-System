@@ -10,7 +10,7 @@ You can explore the API endpoints using the Postman collection:
 
 ## Medium Article 📝
 
-Learn more about the development of this Healthcare Management System in my [Medium article](link-to-medium-article).
+Learn more about the development of this Healthcare Management System in my [Medium article](link).
 
 ## Features ✨
 
@@ -35,9 +35,9 @@ Learn more about the development of this Healthcare Management System in my [Med
 ## Tech Stack 💻
 
 - **Frontend**: React, Vite, TypeScript  
-- **Backend**: FastAPI  
+- **Backend**: FastAPI, Celery
 - **UI/UX**: TailwindCSS, Material-UI  
-- **APIs**: Google Maps, Clerk, Metriport (EHR), Google Calendar, Fit APIs  
+- **APIs**: Google Maps, Clerk, Metriport (EHR), Fit APIs  
 - **Data Security**: User authentication and secure health data management  
 - **Cache Management**: Redis for optimized performance
 
