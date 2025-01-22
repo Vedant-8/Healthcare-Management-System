@@ -13,9 +13,7 @@ Learn more about the development of this Healthcare Management System in my [Med
 
 ## YouTube Demo 🎥
 
-Watch a demo of the Healthcare Management System here: 
-<iframe width="560" height="315" src="(https://www.youtube.com/watch?v=c9sDtzVAtJw)" frameborder="0" allowfullscreen></iframe>
-
+[![Watch the demo](https://img.youtube.com/vi/c9sDtzVAtJw/0.jpg)](https://www.youtube.com/watch?v=c9sDtzVAtJw)
 
 ## Features ✨
 
@@ -54,16 +52,19 @@ Watch a demo of the Healthcare Management System here:
 
 ## API Integrations 🔌
 
-- **Nearby Hospital Locator**: Fetch hospital data based on user location using mapping APIs.
-- **Health Data Management**: Use FHIR APIs for aggregating health records from different healthcare providers.
-- **Appointment Scheduling**: Google Calendar API integration for scheduling and managing appointments.
-- **Fit Data APIs**: Track health and fitness data with visual representations.
-- **SMS/Email Notifications**: For appointment reminders and alerts.
+- **MapBox API**: For plotting A-to-B routes on custom maps across all locator-based endpoints (hospitals, pharmacies, laboratories).  
+- **Metriport API**: As a comprehensive solution for EHR and FHIR integration, enabling secure fetching, storage, and management of patient health records.  
+- **Clerk Authentication API**: Provides OAuth-based secure account creation and login for user authentication.  
+- **Foursquare API**: Helps locate hospitals, pharmacies, and labs based on user geolocation.  
+- **Google Calendar API**: For seamless scheduling and managing appointments.  
+- **Fit Data APIs**: Integrates with GoogleFit to track health metrics like steps, heart rate, and more.  
+- **Redis Caching**: Optimizes data requests and improves API response times, ensuring better performance.  
+- **Postman**: Used for testing endpoints, validating API responses, and ensuring seamless integration across features.  
 
 ## Getting Started 🚀
 
 1. Clone the repository:  
-   `git clone https://github.com/Vedant-8/Healthcare-Management-System.git`
+   `git clone https://github.com/Vedant-8/MedEase.git`
 
 2. Install dependencies:  
    `npm install` (for frontend)  
